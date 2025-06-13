@@ -37,5 +37,31 @@
     }
   ],
   "categories": ["music", "entertainment"],
-  "lang": "zh-CN"
+  "lang": "zh-CN",
+  "media_session": {
+    "supported_actions": [
+      "play",
+      "pause",
+      "stop",
+      "seekto",
+      "previoustrack",
+      "nexttrack",
+      "seekforward",
+      "seekbackward"
+    ]
+  },
+  "shortcuts": [
+    {
+      "name": "播放音乐",
+      "short_name": "播放",
+      "description": "开始播放音乐",
+      "url": "/?action=play",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
 }

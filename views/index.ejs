@@ -21,6 +21,17 @@
     <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
     <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png">
+    
+    <!-- iOS 媒体会话支持 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    
+    <!-- 媒体会话相关 meta 标签 -->
+    <meta name="media-session" content="enabled">
+    <meta name="apple-media-session" content="enabled">
     <!-- 添加错误处理的样式 -->
     <style>
         .error-message {
@@ -347,6 +358,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- 播放器 JavaScript -->
+    <script src="/ios-media-session-fix.js"></script>
     <script src="/player.js"></script>
     
     <!-- 搜索功能 JavaScript -->

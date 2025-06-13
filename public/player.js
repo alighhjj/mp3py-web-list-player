@@ -14,6 +14,9 @@ let progressBarContainer;
 let seekThumb;
 let isDragging = false;
 
+// iOS 媒体会话修复实例
+let iosMediaSessionFix = null;
+
 /**
  * 加载歌曲
  * @param {number} index - 歌曲在播放列表中的索引
@@ -260,32 +263,90 @@ function updateMediaSession(song) {
         
         // 设置媒体会话动作处理器
         navigator.mediaSession.setActionHandler('play', () => {
+            console.log('Media Session: 播放按钮被点击');
             if (audio.paused) {
                 togglePlayPause();
             }
         });
         
         navigator.mediaSession.setActionHandler('pause', () => {
+            console.log('Media Session: 暂停按钮被点击');
             if (!audio.paused) {
                 togglePlayPause();
             }
         });
         
+        navigator.mediaSession.setActionHandler('stop', () => {
+            console.log('Media Session: 停止按钮被点击');
+            audio.pause();
+            audio.currentTime = 0;
+            playPauseBtn.classList.remove('fa-pause');
+            playPauseBtn.classList.add('fa-play');
+            updateMediaSessionPlaybackState('none');
+        });
+        
         navigator.mediaSession.setActionHandler('previoustrack', () => {
+            console.log('Media Session: 上一曲按钮被点击');
             playPreviousSong();
         });
         
         navigator.mediaSession.setActionHandler('nexttrack', () => {
+            console.log('Media Session: 下一曲按钮被点击');
             playNextSong();
         });
         
         // 设置播放位置状态（可选）
         navigator.mediaSession.setActionHandler('seekto', (details) => {
+            console.log('Media Session: 进度条被拖动到:', details.seekTime);
             if (details.seekTime && audio.duration) {
                 audio.currentTime = details.seekTime;
                 updateMediaSessionPositionState();
             }
         });
+        
+        // iOS特殊处理：设置快进和快退
+        try {
+            navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+                console.log('Media Session: 快退按钮被点击');
+                const skipTime = details.seekOffset || 10;
+                audio.currentTime = Math.max(audio.currentTime - skipTime, 0);
+                updateMediaSessionPositionState();
+            });
+            
+            navigator.mediaSession.setActionHandler('seekforward', (details) => {
+                console.log('Media Session: 快进按钮被点击');
+                const skipTime = details.seekOffset || 10;
+                audio.currentTime = Math.min(audio.currentTime + skipTime, audio.duration);
+                updateMediaSessionPositionState();
+            });
+        } catch (error) {
+            console.log('当前浏览器不支持快进/快退功能:', error);
+        }
+        
+        // iOS特殊处理：使用修复脚本更新媒体会话
+        if (isiOSPWA() && iosMediaSessionFix) {
+            iosMediaSessionFix.updateMetadata({
+                title: song.title,
+                artist: song.artist,
+                album: song.album || '未知专辑',
+                artwork: [
+                    {
+                        src: song.cover || '/icons/icon-192x192.png',
+                        sizes: '192x192',
+                        type: 'image/png'
+                    },
+                    {
+                        src: song.cover || '/icons/icon-512x512.png',
+                        sizes: '512x512',
+                        type: 'image/png'
+                    }
+                ]
+            });
+        } else {
+            setTimeout(() => {
+                updateMediaSessionPositionState();
+            }, 300);
+        }
         
         console.log('媒体会话元数据已更新:', song.title, 'by', song.artist);
     } else {
@@ -617,16 +678,38 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isiOSPWA()) {
         console.log('检测到iOS PWA环境，添加特殊处理');
         
+        // 强制重新设置Media Session
+        audio.addEventListener('loadstart', () => {
+            setTimeout(() => {
+                if (playlist[currentSongIndex]) {
+                    updateMediaSession(playlist[currentSongIndex]);
+                }
+            }, 100);
+        });
+        
         audio.addEventListener('pause', () => {
+            console.log('iOS PWA: 音频暂停事件');
             updateMediaSessionPlaybackState('paused');
         });
         
         audio.addEventListener('play', () => {
+            console.log('iOS PWA: 音频播放事件');
             updateMediaSessionPlaybackState('playing');
         });
         
         audio.addEventListener('ended', () => {
+            console.log('iOS PWA: 音频结束事件');
             updateMediaSessionPlaybackState('none');
+        });
+        
+        // iOS特殊处理：确保Media Session在页面可见时重新激活
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && playlist[currentSongIndex]) {
+                console.log('iOS PWA: 页面重新可见，重新设置Media Session');
+                setTimeout(() => {
+                    updateMediaSession(playlist[currentSongIndex]);
+                }, 200);
+            }
         });
     }
 
@@ -695,6 +778,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始化播放器
     initPlayer();
+    
+    // 初始化 iOS 媒体会话修复
+    if (typeof IOSMediaSessionFix !== 'undefined' && isiOSPWA()) {
+        iosMediaSessionFix = new IOSMediaSessionFix(audio);
+        
+        // 监听自定义媒体会话事件
+        window.addEventListener('mediasession-previoustrack', () => {
+            playPreviousSong();
+        });
+        
+        window.addEventListener('mediasession-nexttrack', () => {
+            playNextSong();
+        });
+        
+        console.log('iOS 媒体会话修复已初始化');
+    }
     
     // 初始化歌单选择器
     initPlaylistSelector();
