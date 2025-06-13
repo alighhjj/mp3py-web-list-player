@@ -1,0 +1,56 @@
+{
+  "processedAt": "2025-06-13T02:42:13.283Z",
+  "totalSongs": 5,
+  "songs": [
+    {
+      "title": "奢香夫人",
+      "artist": "凤凰传奇",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=354750",
+      "cover": "https://p3.music.126.net/Uu_tvYJWMEqKmVlKwrVGpQ==/109951163068646489.jpg?param=500y500",
+      "trackId": 354750,
+      "source": "netease",
+      "processedAt": "2025-06-13T02:42:13.281Z"
+    },
+    {
+      "title": "奢香夫人",
+      "artist": "晴几IKU, 三先生",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=1962695870",
+      "cover": "https://p3.music.126.net/iwwYxEvgEo4UHFavHCf0nQ==/109951167648583991.jpg?param=500y500",
+      "trackId": 1962695870,
+      "source": "netease",
+      "processedAt": "2025-06-13T02:42:12.859Z"
+    },
+    {
+      "title": "奢香夫人 完整版【抖音热播】",
+      "artist": "Beccno",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2092377826",
+      "cover": "https://p3.music.126.net/5nBIn_xynPs_wY-8LFKL9w==/109951168912855684.jpg?param=500y500",
+      "trackId": 2092377826,
+      "source": "netease",
+      "processedAt": "2025-06-13T02:42:13.283Z"
+    },
+    {
+      "title": "奢香夫人（DJ阿樂）",
+      "artist": "DJ阿樂, 勇的波涛, DJ阿辉",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2070261075",
+      "cover": "https://p3.music.126.net/K_-MPClXf24osHyrl3FoqA==/109951168845810403.jpg?param=500y500",
+      "trackId": 2070261075,
+      "source": "netease",
+      "processedAt": "2025-06-13T02:42:13.023Z"
+    },
+    {
+      "title": "奢香夫人 (原唱：凤凰传奇)",
+      "artist": "余子林, 沐柚",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2080990053",
+      "cover": "https://p3.music.126.net/hrM0na9K3upPFOG6f_scCQ==/109951168906098176.jpg?param=500y500",
+      "trackId": 2080990053,
+      "source": "netease",
+      "processedAt": "2025-06-13T02:42:13.122Z"
+    }
+  ]
+}

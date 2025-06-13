@@ -1,0 +1,56 @@
+{
+  "processedAt": "2025-06-13T03:41:43.313Z",
+  "totalSongs": 5,
+  "songs": [
+    {
+      "title": "白天不懂夜的黑",
+      "artist": "那英",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=280266",
+      "cover": "https://p3.music.126.net/Khimy92yfGhFc35fKV3nCg==/109951167343214444.jpg?param=500y500",
+      "trackId": 280266,
+      "source": "netease",
+      "processedAt": "2025-06-13T03:41:42.973Z"
+    },
+    {
+      "title": "白天不懂夜的黑",
+      "artist": "蔡健雅",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=5274269",
+      "cover": "https://p3.music.126.net/IWx4-8FWm7cC-b_3Xt9_Sg==/80264348845290.jpg?param=500y500",
+      "trackId": 5274269,
+      "source": "netease",
+      "processedAt": "2025-06-13T03:41:43.313Z"
+    },
+    {
+      "title": "白天不懂夜的黑 (Live)",
+      "artist": "潘粤明",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=518094085",
+      "cover": "https://p3.music.126.net/vN3l5VQDSjANuHIK4BZHKw==/109951163061729724.jpg?param=500y500",
+      "trackId": 518094085,
+      "source": "netease",
+      "processedAt": "2025-06-13T03:41:42.858Z"
+    },
+    {
+      "title": "白天不懂夜的黑",
+      "artist": "孙楠",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=33419666",
+      "cover": "https://p3.music.126.net/EeNniPznAwA7DZji_jyoJA==/7965961744727937.jpg?param=500y500",
+      "trackId": 33419666,
+      "source": "netease",
+      "processedAt": "2025-06-13T03:41:43.232Z"
+    },
+    {
+      "title": "白天不懂夜的黑 (Live版)",
+      "artist": "那英",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2030766858",
+      "cover": "https://p3.music.126.net/7C9M22jEr3W7VDQxTsjW7Q==/109951168469139967.jpg?param=500y500",
+      "trackId": 2030766858,
+      "source": "netease",
+      "processedAt": "2025-06-13T03:41:42.636Z"
+    }
+  ]
+}

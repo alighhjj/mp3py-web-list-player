@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- PWA 配置 -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- 移动设备支持的 meta 标签 -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="音乐播放器">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Apple 设备图标 -->
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png">
+    <!-- 添加错误处理的样式 -->
+    <style>
+        .error-message {
+            text-align: center;
+            padding: 20px;
+            color: #ff5555;
+        }
+        .url-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-size: 12px;
+            margin-left: auto;
+        }
+        .url-toggle {
+            position: relative;
+            width: 32px;
+            height: 12px;
+            background-color: #333;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            -webkit-app-region: no-drag;
+        }
+        .url-toggle.active {
+            background-color: #007bff;
+        }
+        .url-toggle-slider {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .url-toggle.active .url-toggle-slider {
+            transform: translateX(20px);
+        }
+        .url-toggle-label {
+            font-size: 10px;
+            color: #ccc;
+        }
+        .playlist-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+            justify-content: center;
+        }
+        .playlist-btn {
+            padding: 6px 12px;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #555;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+            min-width: 50px;
+        }
+        .playlist-btn:hover {
+            background-color: #555;
+            border-color: #777;
+        }
+        .playlist-btn.active {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .playlist-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        /* 搜索弹窗样式 */
+        .search-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .search-modal-content {
+            background-color: #1a1a1a;
+            margin: 10% auto;
+            padding: 30px;
+            border: 1px solid #333;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .search-modal h3 {
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+        
+        .search-input-group {
+            margin-bottom: 20px;
+        }
+        
+        .search-input-group label {
+            display: block;
+            color: #ccc;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            border: 1px solid #555;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+        }
+        
+        .search-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+            margin-top: 25px;
+        }
+        
+        .search-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .search-btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+        
+        .search-btn-primary:hover {
+            background-color: #0056b3;
+        }
+        
+        .search-btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .search-btn-secondary:hover {
+            background-color: #545b62;
+        }
+        
+        .search-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .search-status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: center;
+            display: none;
+        }
+        
+        .search-status.success {
+            background-color: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+            border: 1px solid #28a745;
+        }
+        
+        .search-status.error {
+            background-color: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+        
+        .search-status.loading {
+            background-color: rgba(0, 123, 255, 0.2);
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
+        
+        /* 按钮组样式 */
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        
+        .button-group .buy-button {
+            flex: 1;
+            max-width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="window-controls">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <div class="app-title">
+                <i class="fas fa-music"></i> 音乐播放器
+            </div>
+            <div class="url-toggle-container">
+                <span class="url-toggle-label">音源模式</span>
+                <div class="url-toggle" id="url-toggle" data-mode="from_api">
+                    <div class="url-toggle-slider"></div>
+                </div>
+                <span class="url-toggle-label" id="toggle-mode-text">API</span>
+            </div>
+            <div class="user-info">
+                <span class="username"></span>
+            </div>
+        </header>
+        <main>
+            <aside class="album-info">
+                <img src="/icons/icon-192x192.png" alt="Album Cover" class="album-cover" id="current-album-cover">
+                <div class="album-info-text">
+                    <h2 class="song-title-display">选择一首歌曲</h2>
+                    <p class="artist-display">by 未知艺术家</p>
+                </div>
+                <!-- 歌单选择按钮组 -->
+                <div class="playlist-selector">
+                    <button class="playlist-btn active" data-playlist="costomer" title="用户歌单">👤</button>
+                    <button class="playlist-btn" data-playlist="hot" title="热门歌曲">🔥</button>
+                    <button class="playlist-btn" data-playlist="new" title="最新歌曲">🆕</button>
+                    <button class="playlist-btn" data-playlist="original" title="原创歌曲">🎵</button>
+                    <button class="playlist-btn" data-playlist="soaring" title="飙升歌曲">📈</button>
+                </div>
+                <div class="button-group">
+                    <button class="buy-button" id="download-button" title="下载歌曲">⬇️</button>
+                    <button class="buy-button" id="search-button" title="搜索歌曲">🔍</button>
+                    <button class="buy-button" id="refresh-button" title="刷新歌单">🔄</button>
+                </div>
+            </aside>
+            <section class="playlist">
+                <% if (songs && songs.length > 0) { %>
+                    <% songs.forEach((song, index) => { %>
+                        <div class="song-item" 
+                             data-src="<%= song.src %>" 
+                             data-cover="<%= song.cover %>" 
+                             data-track-id="<%= song.trackId %>" 
+                             data-source="<%= song.source %>">
+                            <span class="song-number"><%= String(index + 1).padStart(String(songs.length).length, '0') %> </span>
+                            <span class="song-title"><%= song.title %></span>
+                            <span class="song-artist"><%= song.artist %></span>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <div class="error-message">
+                        <p>没有找到音乐文件，请检查 music_list.json 文件或网络连接</p>
+                    </div>
+                <% } %>
+            </section>
+        </main>
+        <footer>
+            <div class="player-controls">
+                <i class="fas fa-backward"></i>
+                <i class="fas fa-play"></i>
+                <i class="fas fa-forward"></i>
+            </div>
+            <div class="playback-bar">
+                <span class="current-time">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="seek-thumb"></div>
+                </div>
+                <span class="total-time">0:00</span>
+            </div>
+            <div class="volume-control">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" class="volume-slider" min="0" max="100" value="50" 
+                       aria-label="音量控制" 
+                       title="调节音量" 
+                       role="slider" 
+                       aria-valuemin="0" 
+                       aria-valuemax="100" 
+                       aria-valuenow="50">
+            </div>
+        </footer>
+    </div>
+    
+    <!-- 搜索弹窗 -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-modal-content">
+            <h3><i class="fas fa-search"></i> 搜索歌曲</h3>
+            <div class="search-input-group">
+                <label for="search-keyword">歌曲名称或歌手姓名：</label>
+                <input type="text" id="search-keyword" class="search-input" placeholder="请输入歌曲名称或歌手姓名..." maxlength="100">
+            </div>
+            <div class="search-buttons">
+                <button type="button" class="search-btn search-btn-secondary" id="search-cancel">取消</button>
+                <button type="button" class="search-btn search-btn-primary" id="search-confirm">搜索</button>
+            </div>
+            <div id="search-status" class="search-status"></div>
+        </div>
+    </div>
+    
+    <!-- Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- 播放器 JavaScript -->
+    <script src="/player.js"></script>
+    
+    <!-- 搜索功能 JavaScript -->
+    <script>
+        // 搜索功能相关变量
+        const searchModal = document.getElementById('search-modal');
+        const searchButton = document.getElementById('search-button');
+        const searchCancel = document.getElementById('search-cancel');
+        const searchConfirm = document.getElementById('search-confirm');
+        const searchKeyword = document.getElementById('search-keyword');
+        const searchStatus = document.getElementById('search-status');
+        
+        // 显示搜索弹窗
+        function showSearchModal() {
+            searchModal.style.display = 'block';
+            searchKeyword.focus();
+            searchKeyword.value = '';
+            hideSearchStatus();
+        }
+        
+        // 隐藏搜索弹窗
+        function hideSearchModal() {
+            searchModal.style.display = 'none';
+            searchKeyword.value = '';
+            hideSearchStatus();
+        }
+        
+        // 显示搜索状态
+        function showSearchStatus(message, type = 'loading') {
+            searchStatus.textContent = message;
+            searchStatus.className = `search-status ${type}`;
+            searchStatus.style.display = 'block';
+        }
+        
+        // 隐藏搜索状态
+        function hideSearchStatus() {
+            searchStatus.style.display = 'none';
+        }
+        
+        // 加载搜索结果
+        function loadSearchResults(searchData) {
+            if (!searchData || !searchData.songs || !Array.isArray(searchData.songs)) {
+                console.error('搜索结果数据格式错误');
+                return;
+            }
+            
+            // 更新歌曲列表
+            playlist = searchData.songs;
+            
+            // 更新播放列表标题
+            const playlistTitle = document.querySelector('.playlist-title');
+            if (playlistTitle) {
+                playlistTitle.textContent = `搜索结果 (${playlist.length}首)`;
+            }
+            
+            // 取消所有歌单按钮的激活状态
+            const playlistButtons = document.querySelectorAll('.playlist-btn');
+            playlistButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // 设置当前歌单名称为搜索状态
+            if (typeof currentPlaylistName !== 'undefined') {
+                currentPlaylistName = 'search';
+            }
+            
+            // 重新渲染歌曲列表
+            renderPlaylistHTML();
+            
+            // 如果当前没有播放歌曲，设置第一首为当前歌曲
+            if (playlist.length > 0 && currentSongIndex === -1) {
+                currentSongIndex = 0;
+                loadSong(currentSongIndex);
+            }
+            
+            console.log(`搜索结果已加载：${playlist.length}首歌曲`);
+        }
+        
+        // 执行搜索
+        async function performSearch() {
+            const keyword = searchKeyword.value.trim();
+            
+            if (!keyword) {
+                showSearchStatus('请输入搜索关键词', 'error');
+                return;
+            }
+            
+            // 禁用搜索按钮
+            searchConfirm.disabled = true;
+            searchCancel.disabled = true;
+            showSearchStatus('正在搜索歌曲，请稍候...', 'loading');
+            
+            try {
+                // 调用后端搜索API
+                const response = await fetch('/api/search-songs', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ keyword: keyword })
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    showSearchStatus(`搜索完成！找到 ${result.totalSongs} 首歌曲，正在刷新页面...`, 'success');
+                    
+                    // 延迟后加载搜索结果
+                    setTimeout(() => {
+                        loadSearchResults(result.data);
+                        hideSearchModal();
+                    }, 1500);
+                } else {
+                    showSearchStatus(result.message || '搜索失败，请重试', 'error');
+                }
+            } catch (error) {
+                console.error('搜索请求失败:', error);
+                showSearchStatus('网络错误，请检查连接后重试', 'error');
+            } finally {
+                // 重新启用按钮
+                searchConfirm.disabled = false;
+                searchCancel.disabled = false;
+            }
+        }
+        
+        // 事件监听器
+        searchButton.addEventListener('click', showSearchModal);
+        searchCancel.addEventListener('click', hideSearchModal);
+        searchConfirm.addEventListener('click', performSearch);
+        
+        // 点击弹窗外部关闭
+        searchModal.addEventListener('click', function(event) {
+            if (event.target === searchModal) {
+                hideSearchModal();
+            }
+        });
+        
+        // 回车键搜索
+        searchKeyword.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && !searchConfirm.disabled) {
+                performSearch();
+            }
+        });
+        
+        // ESC键关闭弹窗
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && searchModal.style.display === 'block') {
+                hideSearchModal();
+            }
+        });
+        
+        // 刷新歌单功能
+        const refreshButton = document.getElementById('refresh-button');
+        
+        async function performRefresh() {
+            try {
+                // 禁用刷新按钮
+                refreshButton.disabled = true;
+                refreshButton.innerHTML = '⏳';
+                
+                const response = await fetch('/api/refresh-playlists', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                const result = await response.json();
+                
+                if (response.ok && result.success) {
+                    // 刷新成功，重新加载页面
+                    window.location.reload();
+                } else {
+                    alert('刷新歌单失败: ' + (result.message || '未知错误'));
+                    // 恢复按钮状态
+                    refreshButton.disabled = false;
+                    refreshButton.innerHTML = '🔄';
+                }
+            } catch (error) {
+                console.error('刷新歌单请求失败:', error);
+                alert('网络错误，请检查连接后重试');
+                // 恢复按钮状态
+                refreshButton.disabled = false;
+                refreshButton.innerHTML = '🔄';
+            }
+        }
+        
+        // 刷新按钮事件监听器
+        refreshButton.addEventListener('click', performRefresh);
+    </script>
+    
+    <!-- Service Worker 注册 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
