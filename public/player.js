@@ -195,6 +195,46 @@ function updateSongUI(song, index) {
  * 更新媒体会话元数据
  * @param {Object} song - 歌曲对象
  */
+/**
+ * 检测是否为iOS PWA环境
+ * @returns {boolean} 是否为iOS PWA
+ */
+function isiOSPWA() {
+    return window.navigator.standalone === true && /iPad|iPhone|iPod/.test(navigator.userAgent);
+}
+
+/**
+ * 更新媒体会话播放状态
+ * @param {string} state - 播放状态: 'playing', 'paused', 'none'
+ */
+function updateMediaSessionPlaybackState(state) {
+    if ('mediaSession' in navigator) {
+        try {
+            navigator.mediaSession.playbackState = state;
+            console.log('媒体会话播放状态已更新:', state);
+        } catch (error) {
+            console.warn('设置媒体会话播放状态失败:', error);
+        }
+    }
+}
+
+/**
+ * 更新媒体会话位置状态
+ */
+function updateMediaSessionPositionState() {
+    if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession) {
+        try {
+            navigator.mediaSession.setPositionState({
+                duration: audio.duration || 0,
+                playbackRate: audio.playbackRate,
+                position: audio.currentTime || 0
+            });
+        } catch (error) {
+            console.warn('设置播放位置状态失败:', error);
+        }
+    }
+}
+
 function updateMediaSession(song) {
     if ('mediaSession' in navigator) {
         navigator.mediaSession.metadata = new MediaMetadata({
@@ -214,6 +254,9 @@ function updateMediaSession(song) {
                 }
             ]
         });
+        
+        // 设置初始播放状态
+        updateMediaSessionPlaybackState(audio.paused ? 'paused' : 'playing');
         
         // 设置媒体会话动作处理器
         navigator.mediaSession.setActionHandler('play', () => {
@@ -240,6 +283,7 @@ function updateMediaSession(song) {
         navigator.mediaSession.setActionHandler('seekto', (details) => {
             if (details.seekTime && audio.duration) {
                 audio.currentTime = details.seekTime;
+                updateMediaSessionPositionState();
             }
         });
         
@@ -501,6 +545,8 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.play().then(() => {
                 playPauseBtn.classList.remove('fa-play');
                 playPauseBtn.classList.add('fa-pause');
+                // 更新Media Session状态
+                updateMediaSessionPlaybackState('playing');
             }).catch(error => {
                 console.error('播放失败:', error);
                 // 如果播放失败，可能是链接失效，尝试重新获取
@@ -514,6 +560,8 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.pause();
             playPauseBtn.classList.remove('fa-pause');
             playPauseBtn.classList.add('fa-play');
+            // 更新Media Session状态
+            updateMediaSessionPlaybackState('paused');
         }
     }
 
@@ -528,6 +576,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 播放成功后更新按钮状态
                 playPauseBtn.classList.remove('fa-play');
                 playPauseBtn.classList.add('fa-pause');
+                // 更新Media Session状态
+                updateMediaSessionPlaybackState('playing');
             }).catch(error => {
                 console.error('播放上一曲失败:', error);
             });
@@ -545,6 +595,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // 播放成功后更新按钮状态
                 playPauseBtn.classList.remove('fa-play');
                 playPauseBtn.classList.add('fa-pause');
+                // 更新Media Session状态
+                updateMediaSessionPlaybackState('playing');
             }).catch(error => {
                 console.error('播放下一曲失败:', error);
             });
@@ -558,14 +610,25 @@ document.addEventListener('DOMContentLoaded', () => {
         currentTimeSpan.textContent = formatTime(audio.currentTime);
         
         // 更新媒体会话播放位置
-        if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession) {
-            navigator.mediaSession.setPositionState({
-                duration: audio.duration || 0,
-                playbackRate: audio.playbackRate,
-                position: audio.currentTime || 0
-            });
-        }
+        updateMediaSessionPositionState();
     });
+    
+    // iOS PWA特殊处理：添加额外的音频事件监听器
+    if (isiOSPWA()) {
+        console.log('检测到iOS PWA环境，添加特殊处理');
+        
+        audio.addEventListener('pause', () => {
+            updateMediaSessionPlaybackState('paused');
+        });
+        
+        audio.addEventListener('play', () => {
+            updateMediaSessionPlaybackState('playing');
+        });
+        
+        audio.addEventListener('ended', () => {
+            updateMediaSessionPlaybackState('none');
+        });
+    }
 
     // 歌曲加载完成时更新总时长
     audio.addEventListener('loadedmetadata', () => {
@@ -780,6 +843,8 @@ let currentPlaylistName = 'costomer'; // 当前歌单名称
                     audio.play().then(() => {
                         playPauseBtn.classList.remove('fa-play');
                         playPauseBtn.classList.add('fa-pause');
+                        // 更新Media Session状态
+                        updateMediaSessionPlaybackState('playing');
                     }).catch(error => {
                         console.error('播放失败:', error);
                     });
