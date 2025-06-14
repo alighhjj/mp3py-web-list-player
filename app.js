@@ -6,7 +6,7 @@ const { getMusicUrl } = require('./music_api');
 const { spawn } = require('child_process');
 
 const app = express();
-const PORT = process.env.PORT || 5678;
+const PORT = 5678;
 
 /**
  * 设置安全头部和缓存控制中间件
