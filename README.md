@@ -1,6 +1,6 @@
 # 音乐播放器 (Music Player)
 
-一个基于 Node.js 和 Express 的现代化音乐播放器 Web 应用，支持 PWA（渐进式 Web 应用）功能和在线音乐流媒体播放。
+一个基于 Node.js 和 Express 的现代化音乐播放器 Web 应用，支持 PWA（渐进式 Web 应用）功能、在线音乐流媒体播放和智能音乐列表生成。
 
 ## 功能特性
 
@@ -13,6 +13,9 @@
 - **歌曲下载**：支持下载当前播放的歌曲到本地
 - **在线音乐流媒体**：集成第三方音乐API，支持在线搜索和播放
 - **实时链接获取**：动态获取音乐播放链接，确保链接有效性
+- **智能预加载**：预加载管理器优化播放体验
+- **多榜单支持**：支持网易云音乐热歌榜、新歌榜、原创榜、飙升榜
+- **音乐搜索**：支持用户自定义搜索和批量处理
 
 ### 🌐 PWA 支持
 - **离线缓存**：Service Worker 实现静态资源和音乐文件缓存
@@ -50,25 +53,48 @@
 ## 项目结构
 
 ```
-mp3py-web/
-├── app.js                 # Express 服务器主文件
-├── music_api.js           # 音乐API服务模块
-├── music_get.js           # 音乐数据处理模块
-├── package.json           # 项目依赖配置
-├── render.yaml           # Render 部署配置
-├── music_list.json       # 本地音乐列表配置
-├── music_list_api.json   # API音乐列表配置
-├── music_data.json       # 处理后的音乐数据
-├── public/               # 静态资源目录
-│   ├── style.css         # 主样式文件
-│   ├── player.js         # 播放器 JavaScript 逻辑
-│   ├── sw.js             # Service Worker
-│   ├── manifest.json     # PWA 配置文件
-│   └── icons/            # 应用图标
-├── views/                # EJS 模板
-│   └── index.ejs         # 主页模板
-├── music/                # 本地音乐文件目录
-└── workers-site/         # Cloudflare Workers 配置
+mp3py-web-list-player/
+├── app.js                    # Express 服务器主文件
+├── music_api.js              # 音乐API服务模块
+├── music_get.js              # 音乐数据处理模块
+├── music_search.js           # 音乐搜索功能模块
+├── web_list_generator.js     # 网易云榜单生成器
+├── local_list_generator.js   # 本地音乐列表生成器
+├── package.json              # 项目依赖配置
+├── render.yaml              # Render 部署配置
+├── music_list_api.json      # API音乐列表配置
+├── music_data.json          # 处理后的音乐数据
+├── music_search.json        # 搜索结果缓存
+├── syntax-check.js          # 语法检查工具
+├── detailed-syntax-check.js # 详细语法检查工具
+├── test_music_api.js        # API测试工具
+├── final_list/              # 最终处理的榜单数据
+│   ├── hot.json             # 热歌榜
+│   ├── new.json             # 新歌榜
+│   ├── original.json        # 原创榜
+│   ├── soaring.json         # 飙升榜
+│   ├── costomer.json        # 自定义榜单
+│   └── search.json          # 搜索结果
+├── final_list_bak/          # 榜单数据备份
+├── final_list_default/      # 默认榜单数据
+├── origon_list/             # 原始榜单数据
+├── public/                  # 静态资源目录
+│   ├── style.css            # 主样式文件
+│   ├── player.js            # 播放器 JavaScript 逻辑
+│   ├── sw.js                # Service Worker
+│   ├── manifest.json        # PWA 配置文件
+│   ├── ios-media-session-fix.js # iOS媒体会话修复
+│   ├── icons/               # 应用图标
+│   └── screenshots/         # 应用截图
+├── views/                   # EJS 模板
+│   └── index.ejs            # 主页模板
+├── music/                   # 本地音乐文件目录
+├── workers-site/            # Cloudflare Workers 配置
+├── .github/workflows/       # GitHub Actions 配置
+├── *.ps1                    # PowerShell 脚本工具
+├── API_USAGE.md             # API使用说明
+├── README_DEPLOY.md         # 部署说明文档
+└── iOS_LOCKSCREEN_FIX.md    # iOS锁屏修复说明
 ```
 
 ## 安装和运行
@@ -82,7 +108,7 @@ mp3py-web/
 1. **克隆项目**
 ```bash
 git clone <repository-url>
-cd mp3py-web
+cd mp3py-web-list-player
 ```
 
 2. **安装依赖**
@@ -93,7 +119,9 @@ npm install
 3. **配置音乐源**
    - **本地音乐**：将 `.mp3` 格式的音乐文件放入 `music/` 目录中
    - **在线音乐**：编辑 `music_list_api.json` 配置在线音乐列表
-   - **混合模式**：同时支持本地和在线音乐播放
+   - **榜单音乐**：运行 `node web_list_generator.js` 生成网易云音乐榜单
+   - **搜索音乐**：运行 `node music_search.js` 搜索并生成自定义音乐列表
+   - **混合模式**：同时支持本地、在线和榜单音乐播放
 
 4. **启动应用**
 ```bash
@@ -169,11 +197,22 @@ npm run dev
 - **页面结构**：修改 `views/index.ejs`
 - **音乐API**：修改 `music_api.js`
 - **数据处理**：修改 `music_get.js`
+- **搜索功能**：修改 `music_search.js`
+- **榜单生成**：修改 `web_list_generator.js`
+- **本地列表**：修改 `local_list_generator.js`
 
 ### 配置文件说明
-- `music_list.json` - 本地音乐文件列表
 - `music_list_api.json` - 在线音乐配置列表
 - `music_data.json` - 处理后的音乐数据缓存
+- `music_search.json` - 搜索结果缓存
+- `final_list/*.json` - 各类榜单的最终数据
+- `origon_list/*.json` - 原始榜单数据
+
+### 工具脚本说明
+- `syntax-check.js` - 基础语法检查
+- `detailed-syntax-check.js` - 详细语法检查
+- `test_music_api.js` - API功能测试
+- `*.ps1` - PowerShell自动化脚本
 
 ## 浏览器兼容性
 
@@ -193,6 +232,16 @@ ISC License
 
 ## 更新日志
 
+### v3.0.0 (当前版本)
+- 🎵 智能预加载管理器，优化播放体验
+- 📊 网易云音乐榜单集成（热歌榜、新歌榜、原创榜、飙升榜）
+- 🔍 用户自定义音乐搜索功能
+- 🛠️ 完善的开发工具链（语法检查、API测试）
+- 📱 iOS锁屏界面媒体控制修复
+- 🔧 PowerShell自动化脚本工具
+- 📁 多层级音乐列表管理系统
+- ⚡ 优化的缓存策略和错误处理
+
 ### v2.0.0
 - 🎵 新增在线音乐流媒体支持
 - 📥 新增歌曲下载功能
@@ -207,8 +256,4 @@ ISC License
 - PWA 支持
 - 响应式设计
 - 音乐元数据读取
-<<<<<<< HEAD
 - Service Worker 缓存
-=======
-- Service Worker 缓存
->>>>>>> 6c3a9482cf8c2db64ad076b45d69408c5a64981b
