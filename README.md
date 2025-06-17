@@ -107,7 +107,7 @@ mp3py-web-list-player/
 
 1. **克隆项目**
 ```bash
-git clone <repository-url>
+git clone https://github.com/alighhjj/mp3py-web-list-player.git
 cd mp3py-web-list-player
 ```
 
@@ -133,7 +133,7 @@ npm start
 ```
 
 5. **访问应用**
-打开浏览器访问 `http://localhost:3000`
+打开浏览器访问 `http://localhost:3100`
 
 ## 使用说明
 
