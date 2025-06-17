@@ -48,6 +48,22 @@
       "nexttrack"
     ]
   },
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot-1920x869.png",
+      "sizes": "1920x869",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "MP3PY音乐播放器桌面版界面"
+    },
+    {
+      "src": "/screenshots/screenshot-500x752.png",
+      "sizes": "500x752",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "MP3PY音乐播放器移动版界面"
+    }
+  ],
   "shortcuts": [
     {
       "name": "播放音乐",

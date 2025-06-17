@@ -33,7 +33,7 @@ header {
     padding: 10px 20px;
     background-color: #3a3a3a;
     border-bottom: 1px solid #4a4a4a;
-    -webkit-app-region: drag; /* 使整个头部可拖动 */
+    -webkit-app-region: drag; /* 使整个头部可拖动 - Webkit only */
 }
 
 .window-controls span {
@@ -43,7 +43,7 @@ header {
     border-radius: 50%;
     margin-right: 8px;
     cursor: pointer;
-    -webkit-app-region: no-drag; /* 禁用拖动 */
+    -webkit-app-region: no-drag; /* 禁用拖动 - Webkit only */
 }
 
 .window-controls .close {

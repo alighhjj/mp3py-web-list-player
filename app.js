@@ -19,8 +19,8 @@ app.use((req, res, next) => {
   // 防止点击劫持攻击
   res.setHeader('X-Frame-Options', 'DENY');
   
-  // 启用XSS保护
-  res.setHeader('X-XSS-Protection', '1; mode=block');
+  // XSS保护已被现代浏览器弃用，移除以避免不必要的头部
+  // res.setHeader('X-XSS-Protection', '1; mode=block');
   
   // 强制使用HTTPS（仅在生产环境中启用）
   if (process.env.NODE_ENV === 'production') {
@@ -30,16 +30,18 @@ app.use((req, res, next) => {
   // 控制引用者信息
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   
-  // 内容安全策略（允许音频和图片从外部源加载）
-  res.setHeader('Content-Security-Policy', 
-    "default-src 'self'; " +
-    "script-src 'self' 'unsafe-inline'; " +
-    "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; " +
-    "font-src 'self' https://cdnjs.cloudflare.com; " +
-    "img-src 'self' data: https: http:; " +
-    "media-src 'self' https: http: blob:; " +
-    "connect-src 'self' https: http:;"
-  );
+  // 内容安全策略在开发环境中可能过于严格，仅在生产环境启用
+  if (process.env.NODE_ENV === 'production') {
+    res.setHeader('Content-Security-Policy', 
+      "default-src 'self'; " +
+      "script-src 'self' 'unsafe-inline'; " +
+      "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; " +
+      "font-src 'self' https://cdnjs.cloudflare.com; " +
+      "img-src 'self' data: https: http:; " +
+      "media-src 'self' https: http: blob:; " +
+      "connect-src 'self' https: http:;"
+    );
+  }
   
   // 获取请求URL用于后续处理
   const url = req.url;
