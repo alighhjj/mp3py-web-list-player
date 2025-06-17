@@ -6,7 +6,7 @@ const { getMusicUrl } = require('./music_api');
 const { spawn } = require('child_process');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3100;
 
 /**
  * 设置安全头部和缓存控制中间件
@@ -483,7 +483,6 @@ async function startServer() {
     console.log('正在启动服务器...');
     
     // 直接启动服务器，不再检查或处理音乐数据
-    const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => {
       console.log(`服务器运行在 http://localhost:${PORT}`);
       console.log('音乐清单生成功能已独立，服务器仅提供播放功能');

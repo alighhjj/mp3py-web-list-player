@@ -1,56 +1,56 @@
 {
-  "processedAt": "2025-06-13T02:42:13.283Z",
+  "processedAt": "2025-06-16T11:47:17.660Z",
   "totalSongs": 5,
   "songs": [
     {
-      "title": "奢香夫人",
-      "artist": "凤凰传奇",
+      "title": "十年",
+      "artist": "陈奕迅",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=354750",
-      "cover": "https://p3.music.126.net/Uu_tvYJWMEqKmVlKwrVGpQ==/109951163068646489.jpg?param=500y500",
-      "trackId": 354750,
+      "src": "https://music.163.com/song/media/outer/url?id=66842",
+      "cover": "https://p3.music.126.net/WF9SAVpoTbueroj7CLoKKg==/109951163028210664.jpg?param=500y500",
+      "trackId": 66842,
       "source": "netease",
-      "processedAt": "2025-06-13T02:42:13.281Z"
+      "processedAt": "2025-06-16T11:47:17.056Z"
     },
     {
-      "title": "奢香夫人",
-      "artist": "晴几IKU, 三先生",
+      "title": "十年 原唱. 陈奕迅",
+      "artist": "BeatzHummer",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=1962695870",
-      "cover": "https://p3.music.126.net/iwwYxEvgEo4UHFavHCf0nQ==/109951167648583991.jpg?param=500y500",
-      "trackId": 1962695870,
+      "src": "https://music.163.com/song/media/outer/url?id=1467536356",
+      "cover": "https://p3.music.126.net/-VwjTAEbfY5GqsAjxO_5qw==/109951165192141137.jpg?param=500y500",
+      "trackId": 1467536356,
       "source": "netease",
-      "processedAt": "2025-06-13T02:42:12.859Z"
+      "processedAt": "2025-06-16T11:47:17.660Z"
     },
     {
-      "title": "奢香夫人 完整版【抖音热播】",
-      "artist": "Beccno",
+      "title": "十年 (Live)",
+      "artist": "刘若英",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2092377826",
-      "cover": "https://p3.music.126.net/5nBIn_xynPs_wY-8LFKL9w==/109951168912855684.jpg?param=500y500",
-      "trackId": 2092377826,
+      "src": "https://music.163.com/song/media/outer/url?id=29450938",
+      "cover": "https://p3.music.126.net/nmAqT_km61I6avwoIBESqA==/2535473814050033.jpg?param=500y500",
+      "trackId": 29450938,
       "source": "netease",
-      "processedAt": "2025-06-13T02:42:13.283Z"
+      "processedAt": "2025-06-16T11:47:17.068Z"
     },
     {
-      "title": "奢香夫人（DJ阿樂）",
-      "artist": "DJ阿樂, 勇的波涛, DJ阿辉",
+      "title": "十年（温柔男生版）",
+      "artist": "白天",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2070261075",
-      "cover": "https://p3.music.126.net/K_-MPClXf24osHyrl3FoqA==/109951168845810403.jpg?param=500y500",
-      "trackId": 2070261075,
+      "src": "https://music.163.com/song/media/outer/url?id=2064034399",
+      "cover": "https://p3.music.126.net/Mta0jtiVMNseuBKWb-n9iQ==/109951168130267506.jpg?param=500y500",
+      "trackId": 2064034399,
       "source": "netease",
-      "processedAt": "2025-06-13T02:42:13.023Z"
+      "processedAt": "2025-06-16T11:47:17.284Z"
     },
     {
-      "title": "奢香夫人 (原唱：凤凰传奇)",
-      "artist": "余子林, 沐柚",
+      "title": "十年（女声温柔版）",
+      "artist": "甘肃省最后的温柔",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2080990053",
-      "cover": "https://p3.music.126.net/hrM0na9K3upPFOG6f_scCQ==/109951168906098176.jpg?param=500y500",
-      "trackId": 2080990053,
+      "src": "https://music.163.com/song/media/outer/url?id=1934630654",
+      "cover": "https://p3.music.126.net/zeYS8plO32rz2xvZF8RUmg==/109951167060945932.jpg?param=500y500",
+      "trackId": 1934630654,
       "source": "netease",
-      "processedAt": "2025-06-13T02:42:13.122Z"
+      "processedAt": "2025-06-16T11:47:16.936Z"
     }
   ]
 }

@@ -9,13 +9,117 @@ let playlist = [];
 let isLoadingSong = false;
 
 // 全局变量声明
-let urlMode = 'from_list'; // 默认使用LIST模式
+let urlMode = 'from_api'; // 默认使用API模式
 let progressBarContainer;
 let seekThumb;
 let isDragging = false;
 
 // iOS 媒体会话修复实例
 let iosMediaSessionFix = null;
+
+// 预加载管理器
+class PreloadManager {
+    constructor() {
+        this.cache = new Map(); // 存储预加载的URL
+        this.preloadingTasks = new Set(); // 正在预加载的任务
+        this.maxCacheSize = 3; // 最大缓存数量
+        console.log('🎵 PreloadManager: 预加载管理器已初始化');
+    }
+
+    /**
+     * 预加载歌曲URL
+     * @param {Object} song - 歌曲对象
+     * @param {number} index - 歌曲索引
+     * @returns {Promise<string|null>} 预加载的URL
+     */
+    async preloadSong(song, index) {
+        const cacheKey = `${song.trackId}_${song.source}`;
+        
+        // 如果已经缓存，直接返回
+        if (this.cache.has(cacheKey)) {
+            console.log(`🎵 PreloadManager: 使用缓存的URL - ${song.title}`);
+            return this.cache.get(cacheKey);
+        }
+        
+        // 如果正在预加载，避免重复请求
+        if (this.preloadingTasks.has(cacheKey)) {
+            console.log(`🎵 PreloadManager: 正在预加载中，跳过重复请求 - ${song.title}`);
+            return null;
+        }
+        
+        // 检查是否需要清理缓存
+        this.cleanupCache();
+        
+        try {
+            this.preloadingTasks.add(cacheKey);
+            console.log(`🎵 PreloadManager: 开始预加载 - ${song.title}`);
+            
+            let url = null;
+            
+            // 根据URL模式选择获取方式
+            if (urlMode === 'from_list' && song.src) {
+                url = song.src;
+                console.log(`🎵 PreloadManager: 使用列表模式预加载 - ${song.title}`);
+            } else if (song.trackId && song.source) {
+                // 添加随机延迟，避免频繁请求API
+                await new Promise(resolve => setTimeout(resolve, Math.random() * 1000 + 500));
+                url = await getRealTimeMusicUrl(song.trackId, song.source, 320);
+                console.log(`🎵 PreloadManager: 使用API模式预加载 - ${song.title}`);
+            }
+            
+            if (url) {
+                this.cache.set(cacheKey, url);
+                console.log(`🎵 PreloadManager: 预加载成功 - ${song.title}`);
+                return url;
+            } else {
+                console.warn(`🎵 PreloadManager: 预加载失败，无法获取URL - ${song.title}`);
+                return null;
+            }
+        } catch (error) {
+            console.error(`🎵 PreloadManager: 预加载出错 - ${song.title}:`, error);
+            return null;
+        } finally {
+            this.preloadingTasks.delete(cacheKey);
+        }
+    }
+    
+    /**
+     * 获取缓存的URL
+     * @param {Object} song - 歌曲对象
+     * @returns {string|null} 缓存的URL
+     */
+    getCachedUrl(song) {
+        const cacheKey = `${song.trackId}_${song.source}`;
+        const url = this.cache.get(cacheKey);
+        if (url) {
+            console.log(`🎵 PreloadManager: 命中缓存 - ${song.title}`);
+        }
+        return url;
+    }
+    
+    /**
+     * 清理缓存，保持缓存大小在限制内
+     */
+    cleanupCache() {
+        if (this.cache.size >= this.maxCacheSize) {
+            const firstKey = this.cache.keys().next().value;
+            this.cache.delete(firstKey);
+            console.log(`🎵 PreloadManager: 清理缓存，删除最旧的条目`);
+        }
+    }
+    
+    /**
+     * 清空所有缓存
+     */
+    clearCache() {
+        this.cache.clear();
+        this.preloadingTasks.clear();
+        console.log(`🎵 PreloadManager: 清空所有缓存`);
+    }
+}
+
+// 创建预加载管理器实例
+const preloadManager = new PreloadManager();
 
 /**
  * 加载歌曲
@@ -42,28 +146,35 @@ async function loadSong(index) {
         
         let audioUrl = '';
         
-        // 根据URL模式选择获取方式
-        if (urlMode === 'from_list') {
-            // 从列表中直接获取src
-            audioUrl = song.src;
-            console.log('使用列表模式获取音频URL:', song.title, audioUrl);
-            
-            if (!audioUrl) {
-                console.warn('列表中没有找到有效的音频URL，尝试切换到API模式');
-                // 如果列表中没有URL，回退到API模式
-                if (song.trackId) {
-                    audioUrl = await getRealTimeMusicUrl(song.trackId, song.source, 320);
-                }
-            }
+        // 首先尝试从预加载缓存获取URL
+        const cachedUrl = preloadManager.getCachedUrl(song);
+        if (cachedUrl) {
+            audioUrl = cachedUrl;
+            console.log('🎵 LoadSong: 使用预加载的URL:', song.title);
         } else {
-            // 使用API模式实时获取
-            if (!song.trackId) {
-                console.error('歌曲缺少trackId，无法获取播放链接:', song.title);
-                return;
+            // 根据URL模式选择获取方式
+            if (urlMode === 'from_list') {
+                // 从列表中直接获取src
+                audioUrl = song.src;
+                console.log('使用列表模式获取音频URL:', song.title, audioUrl);
+                
+                if (!audioUrl) {
+                    console.warn('列表中没有找到有效的音频URL，尝试切换到API模式');
+                    // 如果列表中没有URL，回退到API模式
+                    if (song.trackId) {
+                        audioUrl = await getRealTimeMusicUrl(song.trackId, song.source, 320);
+                    }
+                }
+            } else {
+                // 使用API模式实时获取
+                if (!song.trackId) {
+                    console.error('歌曲缺少trackId，无法获取播放链接:', song.title);
+                    return;
+                }
+                
+                console.log('使用API模式实时获取播放链接:', song.title);
+                audioUrl = await getRealTimeMusicUrl(song.trackId, song.source, 320);
             }
-            
-            console.log('使用API模式实时获取播放链接:', song.title);
-            audioUrl = await getRealTimeMusicUrl(song.trackId, song.source, 320);
         }
         
         if (audioUrl) {
@@ -97,6 +208,9 @@ async function loadSong(index) {
             }, { once: true });
             
             console.log('歌曲加载完成:', song.title);
+            
+            // 触发预加载下一首歌曲
+            triggerPreloadNext(index);
         } else {
             console.error('无法获取有效的播放链接:', song.title);
         }
@@ -109,6 +223,30 @@ async function loadSong(index) {
 }
 
 /**
+ * 触发预加载下一首歌曲
+ * @param {number} currentIndex - 当前歌曲索引
+ */
+function triggerPreloadNext(currentIndex) {
+    // 计算下一首歌曲的索引
+    const nextIndex = (currentIndex + 1) % playlist.length;
+    const nextSong = playlist[nextIndex];
+    
+    if (nextSong) {
+        console.log(`🎵 Preload: 准备预加载下一首歌曲 - ${nextSong.title}`);
+        
+        // 异步预加载，不阻塞当前播放
+        setTimeout(() => {
+            preloadManager.preloadSong(nextSong, nextIndex).catch(error => {
+                console.warn(`🎵 Preload: 预加载下一首歌曲失败 - ${nextSong.title}:`, error);
+            });
+        }, 1000); // 延迟1秒开始预加载，避免影响当前歌曲的播放
+    }
+}
+
+// 防止重复调用refreshMusicUrl的标志
+let isRefreshingUrl = false;
+
+/**
  * 重新获取音乐播放链接
  * @param {Object} song - 歌曲对象
  * @param {number} index - 歌曲索引
@@ -118,6 +256,14 @@ async function refreshMusicUrl(song, index) {
         console.error('缺少trackId或source信息，无法重新获取链接:', song.title);
         return;
     }
+    
+    // 防止重复调用
+    if (isRefreshingUrl) {
+        console.log('正在重新获取链接中，跳过重复请求:', song.title);
+        return;
+    }
+    
+    isRefreshingUrl = true;
     
     try {
         console.log('正在重新获取播放链接:', song.title);
@@ -143,20 +289,47 @@ async function refreshMusicUrl(song, index) {
             // 重新设置音频源
             audio.src = song.src;
             
-            // 如果这是当前选中的歌曲，尝试播放
+            // 如果这是当前选中的歌曲，等待音频加载完成后再播放
             if (index === currentSongIndex) {
-                audio.play().then(() => {
-                    playPauseBtn.classList.remove('fa-play');
-                    playPauseBtn.classList.add('fa-pause');
-                }).catch(error => {
-                    console.error('重新获取链接后播放失败:', error);
-                });
+                // 添加加载完成事件监听
+                const handleCanPlay = () => {
+                    audio.removeEventListener('canplay', handleCanPlay);
+                    audio.removeEventListener('error', handleLoadError);
+                    
+                    audio.play().then(() => {
+                        playPauseBtn.classList.remove('fa-play');
+                        playPauseBtn.classList.add('fa-pause');
+                        console.log('重新获取链接后播放成功:', song.title);
+                    }).catch(error => {
+                        console.error('重新获取链接后播放失败:', error);
+                    });
+                };
+                
+                // 添加错误处理
+                const handleLoadError = (e) => {
+                    audio.removeEventListener('canplay', handleCanPlay);
+                    audio.removeEventListener('error', handleLoadError);
+                    console.error('音频加载失败:', e);
+                };
+                
+                audio.addEventListener('canplay', handleCanPlay);
+                audio.addEventListener('error', handleLoadError);
+                
+                // 添加超时保护，避免无限等待
+                setTimeout(() => {
+                    audio.removeEventListener('canplay', handleCanPlay);
+                    audio.removeEventListener('error', handleLoadError);
+                    console.warn('音频加载超时，取消播放尝试');
+                }, 10000);
             }
         } else {
             console.error('无法获取有效的播放链接:', song.title);
         }
     } catch (error) {
         console.error('重新获取播放链接失败:', error);
+    } finally {
+        // 重置标志，允许后续调用
+        isRefreshingUrl = false;
     }
 }
 
@@ -362,7 +535,7 @@ function initUrlToggle() {
     const toggleModeText = document.getElementById('toggle-mode-text');
     
     // 从localStorage读取保存的模式
-    const savedMode = localStorage.getItem('urlMode') || 'from_list';
+    const savedMode = localStorage.getItem('urlMode') || 'from_api';
     setUrlMode(savedMode);
     
     // 添加点击事件监听器
@@ -581,6 +754,33 @@ document.addEventListener('DOMContentLoaded', () => {
         if (playlist.length > 0) {
             loadSong(currentSongIndex);
             updatePlaylistUI();
+            
+            // 初始化完成后，开始预加载前几首歌曲
+            setTimeout(() => {
+                console.log('🎵 InitPlayer: 开始初始预加载');
+                
+                // 预加载第二首歌曲（如果存在）
+                if (playlist.length > 1) {
+                    const secondSong = playlist[1];
+                    preloadManager.preloadSong(secondSong, 1).then(() => {
+                        console.log(`🎵 InitPlayer: 初始预加载完成 - ${secondSong.title}`);
+                    }).catch(error => {
+                        console.warn(`🎵 InitPlayer: 初始预加载失败 - ${secondSong.title}:`, error);
+                    });
+                }
+                
+                // 如果歌单较长，也预加载第三首
+                if (playlist.length > 2) {
+                    setTimeout(() => {
+                        const thirdSong = playlist[2];
+                        preloadManager.preloadSong(thirdSong, 2).then(() => {
+                            console.log(`🎵 InitPlayer: 第三首预加载完成 - ${thirdSong.title}`);
+                        }).catch(error => {
+                            console.warn(`🎵 InitPlayer: 第三首预加载失败 - ${thirdSong.title}:`, error);
+                        });
+                    }, 2000); // 延迟2秒预加载第三首
+                }
+            }, 3000); // 延迟3秒开始初始预加载，确保页面加载完成
         }
         
         // 初始化URL切换开关
@@ -599,8 +799,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // updateMediaSession 函数已移动到全局作用域
 
-    // 播放/暂停功能
-    function togglePlayPause() {
+// 播放/暂停功能 - 移动到全局作用域
+function togglePlayPause() {
         if (audio.paused) {
             // 使用Promise处理播放请求
             audio.play().then(() => {
@@ -624,10 +824,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // 更新Media Session状态
             updateMediaSessionPlaybackState('paused');
         }
-    }
+}
 
-    // 上一曲
-    async function playPreviousSong() {
+// 上一曲
+async function playPreviousSong() {
         currentSongIndex = (currentSongIndex - 1 + playlist.length) % playlist.length;
         await loadSong(currentSongIndex);
         // 等待音频加载完成后再播放
@@ -643,11 +843,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('播放上一曲失败:', error);
             });
         });
-    }
+}
 
-    // 下一曲
-    async function playNextSong() {
-        currentSongIndex = (currentSongIndex + 1) % playlist.length;
+// 下一曲
+async function playNextSong() {
+        console.log('执行playNextSong函数');
+        const nextIndex = (currentSongIndex + 1) % playlist.length;
+        const nextSong = playlist[nextIndex];
+        
+        // 检查是否有预加载的URL
+        const preloadedUrl = preloadManager.getCachedUrl(nextSong);
+        if (preloadedUrl) {
+            console.log(`🎵 PlayNext: 使用预加载URL播放下一首 - ${nextSong.title}`);
+            
+            // 更新歌曲信息
+            nextSong.src = preloadedUrl;
+            playlist[nextIndex].src = preloadedUrl;
+            
+            // 直接设置音频源并播放
+            currentSongIndex = nextIndex;
+            updateSongUI(nextSong, nextIndex);
+            
+            audio.src = preloadedUrl;
+            
+            // 等待音频加载完成后再播放
+            audio.addEventListener('canplaythrough', function playWhenReady() {
+                audio.removeEventListener('canplaythrough', playWhenReady);
+                audio.play().then(() => {
+                    // 播放成功后更新按钮状态
+                    playPauseBtn.classList.remove('fa-play');
+                    playPauseBtn.classList.add('fa-pause');
+                    // 更新Media Session状态
+                    updateMediaSessionPlaybackState('playing');
+                    console.log('🎵 PlayNext: 预加载歌曲播放成功 -', nextSong.title);
+                    
+                    // 触发预加载下下首歌曲
+                    triggerPreloadNext(nextIndex);
+                }).catch(error => {
+                    console.error('🎵 PlayNext: 预加载歌曲播放失败:', error);
+                    // 如果预加载的URL播放失败，回退到正常加载流程
+                    fallbackToNormalLoad(nextIndex);
+                });
+            });
+            
+            // 添加错误处理
+            audio.addEventListener('error', function handleError(e) {
+                audio.removeEventListener('error', handleError);
+                console.error('🎵 PlayNext: 预加载URL播放出错:', e);
+                // 回退到正常加载流程
+                fallbackToNormalLoad(nextIndex);
+            }, { once: true });
+        } else {
+            // 没有预加载URL，使用正常加载流程
+            console.log(`🎵 PlayNext: 无预加载URL，使用正常加载流程 - ${nextSong.title}`);
+            fallbackToNormalLoad(nextIndex);
+        }
+}
+
+/**
+ * 回退到正常加载流程
+ * @param {number} nextIndex - 下一首歌曲索引
+ */
+async function fallbackToNormalLoad(nextIndex) {
+        console.log(`🎵 PlayNext: 执行回退加载流程`);
+        currentSongIndex = nextIndex;
         await loadSong(currentSongIndex);
         // 等待音频加载完成后再播放
         audio.addEventListener('canplaythrough', function playWhenReady() {
@@ -658,14 +917,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 playPauseBtn.classList.add('fa-pause');
                 // 更新Media Session状态
                 updateMediaSessionPlaybackState('playing');
+                console.log('下一曲播放成功');
             }).catch(error => {
                 console.error('播放下一曲失败:', error);
             });
         });
-    }
+}
 
-    // 更新播放进度条和时间
-    audio.addEventListener('timeupdate', () => {
+// 将函数暴露到全局作用域，供iOS媒体会话修复脚本调用
+window.playNextSong = playNextSong;
+
+// 更新播放进度条和时间
+audio.addEventListener('timeupdate', () => {
         const progressPercent = (audio.currentTime / audio.duration) * 100;
         progressBar.style.width = `${progressPercent}%`;
         currentTimeSpan.textContent = formatTime(audio.currentTime);
@@ -758,7 +1021,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 歌曲播放结束自动播放下一曲
     audio.addEventListener('ended', () => {
-        playNextSong();
+        console.log('歌曲播放结束，准备播放下一首');
+        
+        // iOS PWA环境下的特殊处理
+        if (isiOSPWA()) {
+            console.log('iOS PWA环境：延迟播放下一首以确保媒体会话同步');
+            setTimeout(() => {
+                playNextSong();
+            }, 200);
+        } else {
+            playNextSong();
+        }
+    });
+
+    // 添加时间更新事件监听，用于触发预加载
+    audio.addEventListener('timeupdate', () => {
+        if (audio.duration && audio.currentTime) {
+            const progress = audio.currentTime / audio.duration;
+            
+            // 当播放进度达到70%时，开始预加载下一首歌曲
+            if (progress >= 0.7) {
+                const nextIndex = (currentSongIndex + 1) % playlist.length;
+                const nextSong = playlist[nextIndex];
+                
+                if (nextSong && !preloadManager.getCachedUrl(nextSong)) {
+                    console.log(`🎵 TimeUpdate: 播放进度${Math.round(progress * 100)}%，触发预加载下一首 - ${nextSong.title}`);
+                    
+                    // 异步预加载，不阻塞播放
+                    preloadManager.preloadSong(nextSong, nextIndex).catch(error => {
+                        console.warn(`🎵 TimeUpdate: 预加载失败 - ${nextSong.title}:`, error);
+                    });
+                }
+            }
+        }
     });
 
     // 更新播放列表UI
@@ -805,11 +1100,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // 歌单相关变量和函数
 let playlistButtons;
 let currentPlaylistName = 'costomer'; // 当前歌单名称
-    
-    /**
-     * 初始化歌单选择器
-     */
-    function initPlaylistSelector() {
+
+/**
+ * 初始化歌单选择器
+ */
+function initPlaylistSelector() {
         // 在DOM加载完成后查询歌单按钮
         playlistButtons = document.querySelectorAll('.playlist-btn');
         
@@ -821,13 +1116,13 @@ let currentPlaylistName = 'costomer'; // 当前歌单名称
                 }
             });
         });
-    }
-    
-    /**
-     * 切换歌单
-     * @param {string} playlistName - 歌单名称
-     */
-    async function switchPlaylist(playlistName) {
+}
+
+/**
+ * 切换歌单
+ * @param {string} playlistName - 歌单名称
+ */
+async function switchPlaylist(playlistName) {
         try {
             // 禁用所有按钮，防止重复点击
             playlistButtons.forEach(btn => btn.disabled = true);
@@ -839,6 +1134,10 @@ let currentPlaylistName = 'costomer'; // 当前歌单名称
             playPauseBtn.classList.remove('fa-pause');
             playPauseBtn.classList.add('fa-play');
             
+            // 清空预加载缓存，因为歌单已更换
+            preloadManager.clearCache();
+            console.log('🎵 SwitchPlaylist: 已清空预加载缓存');
+            
             // 获取新歌单数据
             const response = await fetch(`/api/playlist/${playlistName}`);
             
@@ -848,50 +1147,47 @@ let currentPlaylistName = 'costomer'; // 当前歌单名称
             
             const playlistData = await response.json();
             
-            if (!playlistData.songs || playlistData.songs.length === 0) {
-                throw new Error('歌单数据为空');
+            if (!playlistData.songs || !Array.isArray(playlistData.songs)) {
+                throw new Error('歌单数据格式错误');
             }
             
-            // 更新播放列表
-            playlist = playlistData.songs.map(song => ({
-                title: song.title,
-                artist: song.artist,
-                src: song.src || '',
-                cover: song.cover || '/icons/icon-192x192.png',
-                trackId: song.trackId || '',
-                source: song.source || 'netease'
-            }));
-            
-            // 重置播放索引
+            // 更新全局变量
+            playlist = playlistData.songs;
             currentSongIndex = 0;
             currentPlaylistName = playlistName;
             
-            // 更新UI
-            updatePlaylistButtons(playlistName);
-            updatePlaylistUI();
+            console.log(`歌单切换成功: ${playlistData.chartName}, 共 ${playlist.length} 首歌曲`);
+            
+            // 重新渲染播放列表
             renderPlaylistHTML();
+            
+            // 重新初始化播放列表UI
+            songItems = document.querySelectorAll('.song-item');
+            updatePlaylistUI();
             
             // 加载第一首歌曲
             if (playlist.length > 0) {
                 await loadSong(0);
+                console.log('🎵 SwitchPlaylist: 已加载新歌单的第一首歌曲');
             }
             
-            console.log(`歌单切换成功: ${playlistData.chartName}, 歌曲数量: ${playlist.length}`);
+            // 更新按钮状态
+            updatePlaylistButtons(playlistName);
             
         } catch (error) {
             console.error('切换歌单失败:', error);
             alert(`切换歌单失败: ${error.message}`);
         } finally {
-            // 重新启用按钮
+            // 重新启用所有按钮
             playlistButtons.forEach(btn => btn.disabled = false);
         }
-    }
-    
-    /**
-     * 更新歌单按钮状态
-     * @param {string} activePlaylist - 当前激活的歌单
-     */
-    function updatePlaylistButtons(activePlaylist) {
+}
+
+/**
+ * 更新歌单按钮状态
+ * @param {string} activePlaylist - 当前激活的歌单
+ */
+function updatePlaylistButtons(activePlaylist) {
         playlistButtons.forEach(button => {
             if (button.dataset.playlist === activePlaylist) {
                 button.classList.add('active');
@@ -899,12 +1195,12 @@ let currentPlaylistName = 'costomer'; // 当前歌单名称
                 button.classList.remove('active');
             }
         });
-    }
-    
-    /**
-     * 重新渲染播放列表HTML
-     */
-    function renderPlaylistHTML() {
+}
+
+/**
+ * 重新渲染播放列表HTML
+ */
+function renderPlaylistHTML() {
         const playlistContainer = document.querySelector('.playlist');
         
         if (playlist.length === 0) {

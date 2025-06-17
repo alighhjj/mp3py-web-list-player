@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title><%= title %></title>
     <link rel="stylesheet" href="/style.css">
     
@@ -14,7 +14,10 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="音乐播放器">
+    <meta name="apple-mobile-web-app-title" content="MP3PY音乐播放器">
+    <meta name="application-name" content="MP3PY音乐播放器">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="format-detection" content="telephone=no">
     
     <!-- Apple 设备图标 -->
@@ -123,13 +126,16 @@
         
         .search-modal-content {
             background-color: #1a1a1a;
-            margin: 10% auto;
-            padding: 30px;
+            margin: 5% auto;
+            padding: 20px;
             border: 1px solid #333;
             border-radius: 12px;
             width: 90%;
             max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
         }
         
         .search-modal h3 {
@@ -245,6 +251,37 @@
         .button-group .buy-button {
             flex: 1;
             max-width: 120px;
+        }
+        
+        /* 移动端搜索弹窗优化 */
+        @media screen and (max-width: 768px) {
+            .search-modal-content {
+                margin: 2% auto;
+                padding: 15px;
+                width: 95%;
+                max-width: none;
+                max-height: 95vh;
+                border-radius: 8px;
+            }
+            
+            .search-modal h3 {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+            
+            .search-input {
+                padding: 10px;
+                font-size: 16px;
+            }
+            
+            .search-buttons {
+                gap: 10px;
+            }
+            
+            .search-btn {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>

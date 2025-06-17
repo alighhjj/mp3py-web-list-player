@@ -1,6 +1,6 @@
 {
   "chartName": "新歌榜",
-  "processedAt": "2025-06-13T02:52:05.387Z",
+  "processedAt": "2025-06-17T03:30:15.806Z",
   "totalSongs": 100,
   "songs": [
     {
@@ -11,17 +11,7 @@
       "cover": "http://p1.music.126.net/wqyd40jQQLVTY9nynOwETg==/109951171031632866.jpg",
       "trackId": 2708984802,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "李白 (live)",
-      "artist": "单依纯",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712612202",
-      "cover": "http://p1.music.126.net/MCrH67pCaBICesTDtQqLkQ==/109951171268640229.jpg",
-      "trackId": 2712612202,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "莫愁乡",
@@ -31,17 +21,7 @@
       "cover": "http://p1.music.126.net/DVi9B70oYVFtDxVqZf_56g==/109951171264259694.jpg",
       "trackId": 2711834126,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "珠玉",
-      "artist": "单依纯",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704708142",
-      "cover": "http://p2.music.126.net/8Qwc-VkFhMEVFQIlTqPYlw==/109951170981773297.jpg",
-      "trackId": 2704708142,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "想自由",
@@ -51,17 +31,7 @@
       "cover": "http://p1.music.126.net/pV6YcSA_kYyEdj5qhgADig==/109951171127712388.jpg",
       "trackId": 2709792992,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "印记",
-      "artist": "鹭卓",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712619942",
-      "cover": "http://p2.music.126.net/5qnsyvL_FEkrLKiQfejdIQ==/109951171268799007.jpg",
-      "trackId": 2712619942,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "第57次取消发送 (Live版)",
@@ -71,187 +41,57 @@
       "cover": "http://p1.music.126.net/M7qi_93U1IfQxyNT0JKphw==/109951171007412378.jpg",
       "trackId": 2706933026,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
-      "title": "天空没有极限 (粤)",
+      "title": "月亮照山川 (Live版)",
+      "artist": "王赫野/王铮亮",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714743537",
+      "cover": "http://p1.music.126.net/MMRk2tqzEYA1Xr94SF4WfA==/109951171296285023.jpg",
+      "trackId": 2714743537,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "Stars",
+      "artist": "卓沅",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714405896",
+      "cover": "http://p1.music.126.net/4B5Q1KdX9jQdE8c9XFL62g==/109951171311991122.jpg",
+      "trackId": 2714405896,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "李白 (live)",
+      "artist": "单依纯",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2712612202",
+      "cover": "http://p1.music.126.net/MCrH67pCaBICesTDtQqLkQ==/109951171268640229.jpg",
+      "trackId": 2712612202,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "白鸽 (live)",
+      "artist": "GAI周延",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2715047901",
+      "cover": "http://p1.music.126.net/zkfKGi2qr-75lPy48dlYLg==/109951171300378953.jpg",
+      "trackId": 2715047901,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "红蔷薇白玫瑰 (G.E.M.重生版)",
       "artist": "G.E.M.邓紫棋",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2714278534",
-      "cover": "http://p2.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
-      "trackId": 2714278534,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "别让爱凋落 (Live版)",
-      "artist": "王赫野/喻言",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704605090",
-      "cover": "http://p1.music.126.net/HZG_WgD1RtlhuS4vvQoDCg==/109951170980785449.jpg",
-      "trackId": 2704605090,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "情结 (Live版)",
-      "artist": "张碧晨/徐子未",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709756720",
-      "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
-      "trackId": 2709756720,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "亲爱的你啊",
-      "artist": "任素汐/任宥纶",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704972895",
-      "cover": "http://p1.music.126.net/8Fy-LeczfF-Vh_zslLtYYg==/109951170983868080.jpg",
-      "trackId": 2704972895,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "我的秘密 (G.E.M.重生版)",
-      "artist": "G.E.M.邓紫棋",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2714278531",
-      "cover": "http://p2.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
-      "trackId": 2714278531,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "忘了 (Live版)",
-      "artist": "黄子弘凡/黄丽玲",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711879261",
-      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
-      "trackId": 2711879261,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "泡沫 (G.E.M.重生版)",
-      "artist": "G.E.M.邓紫棋",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2714278532",
-      "cover": "http://p2.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
-      "trackId": 2714278532,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "Where Did U Go (G.E.M.重生版)",
-      "artist": "G.E.M.邓紫棋",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2714278530",
-      "cover": "http://p2.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
-      "trackId": 2714278530,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "一点 (Live版)",
-      "artist": "黄子弘凡/姚晓棠",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704605037",
-      "cover": "http://p1.music.126.net/HZG_WgD1RtlhuS4vvQoDCg==/109951170980785449.jpg",
-      "trackId": 2704605037,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "A.I.N.Y. 爱你 (G.E.M.重生版)",
-      "artist": "G.E.M.邓紫棋",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2714278525",
+      "src": "https://music.163.com/song/media/outer/url?id=2714278533",
       "cover": "http://p1.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
-      "trackId": 2714278525,
+      "trackId": 2714278533,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "21个缺点",
-      "artist": "伍六七",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705766536",
-      "cover": "http://p1.music.126.net/KSBODCJgf_6Nt54nNp0OLw==/109951170993005165.jpg",
-      "trackId": 2705766536,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "光年之外 (G.E.M.重生版)",
-      "artist": "G.E.M.邓紫棋",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2714278528",
-      "cover": "http://p2.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
-      "trackId": 2714278528,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "孤单心事 (Live版)",
-      "artist": "张碧晨/周兴哲",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711879316",
-      "cover": "http://p2.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
-      "trackId": 2711879316,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "看着我的眼睛说 (Live版)",
-      "artist": "张远/姚晓棠",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709756728",
-      "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
-      "trackId": 2709756728,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "用背脊唱情歌",
-      "artist": "Gareth.T",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712620397",
-      "cover": "http://p1.music.126.net/LT8Gg3QQVPfjuD7tr7BUAQ==/109951171268775376.jpg",
-      "trackId": 2712620397,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "土象女孩",
-      "artist": "元/Rezey",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2708819042",
-      "cover": "http://p2.music.126.net/JXx64RTG2uc9XmPAN00Eog==/109951171029336194.jpg",
-      "trackId": 2708819042,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "I THINK I FELL IN ＜3",
-      "artist": "THOME/黄格雷",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2706222841",
-      "cover": "http://p1.music.126.net/Kox5oyoKrOm77_Rx4TW2yg==/109951170989107954.jpg",
-      "trackId": 2706222841,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "山东王FREESTYLE",
-      "artist": "华云龙KLE",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2706732865",
-      "cover": "http://p2.music.126.net/eSoVpvVnsS6TCvDUWZWptQ==/109951171005786628.jpg",
-      "trackId": 2706732865,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "神的说唱",
@@ -261,7 +101,167 @@
       "cover": "http://p1.music.126.net/qGviYLTJEmbk4mt72W9WBg==/109951171225831356.jpg",
       "trackId": 2711071578,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "情结 (Live版)",
+      "artist": "张碧晨/徐子未",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709756720",
+      "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
+      "trackId": 2709756720,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "天空没有极限 (粤)",
+      "artist": "G.E.M.邓紫棋",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714278534",
+      "cover": "http://p1.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
+      "trackId": 2714278534,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "我的秘密 (G.E.M.重生版)",
+      "artist": "G.E.M.邓紫棋",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714278531",
+      "cover": "http://p1.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
+      "trackId": 2714278531,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "21个缺点",
+      "artist": "伍六七",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2705766536",
+      "cover": "http://p1.music.126.net/KSBODCJgf_6Nt54nNp0OLw==/109951170993005165.jpg",
+      "trackId": 2705766536,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "临江仙",
+      "artist": "白鹿",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709712022",
+      "cover": "http://p1.music.126.net/_iWs6ADLX3dy7kRLjfAuiw==/109951171263827457.jpg",
+      "trackId": 2709712022,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "用背脊唱情歌",
+      "artist": "Gareth.T",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2712620397",
+      "cover": "http://p1.music.126.net/LT8Gg3QQVPfjuD7tr7BUAQ==/109951171268775376.jpg",
+      "trackId": 2712620397,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "那些我尚未触及的",
+      "artist": "李昊",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2715134490",
+      "cover": "http://p1.music.126.net/er-yk1tBZnks9x0hfejtIw==/109951171308839457.jpg",
+      "trackId": 2715134490,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "Where Did U Go (G.E.M.重生版)",
+      "artist": "G.E.M.邓紫棋",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714278530",
+      "cover": "http://p1.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
+      "trackId": 2714278530,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "泡沫 (G.E.M.重生版)",
+      "artist": "G.E.M.邓紫棋",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714278532",
+      "cover": "http://p1.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
+      "trackId": 2714278532,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "山东王FREESTYLE",
+      "artist": "华云龙KLE",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2706732865",
+      "cover": "http://p1.music.126.net/eSoVpvVnsS6TCvDUWZWptQ==/109951171005786628.jpg",
+      "trackId": 2706732865,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "看着我的眼睛说 (Live版)",
+      "artist": "张远/姚晓棠",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709756728",
+      "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
+      "trackId": 2709756728,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "Dear Friend (live)",
+      "artist": "单依纯",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2715051255",
+      "cover": "http://p1.music.126.net/zkfKGi2qr-75lPy48dlYLg==/109951171300378953.jpg",
+      "trackId": 2715051255,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "A.I.N.Y. 爱你 (G.E.M.重生版)",
+      "artist": "G.E.M.邓紫棋",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714278525",
+      "cover": "http://p1.music.126.net/Dmg-cQJctLB_4ID4WRytIw==/109951171291365368.jpg",
+      "trackId": 2714278525,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "I THINK I FELL IN ＜3",
+      "artist": "THOME/黄格雷",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2706222841",
+      "cover": "http://p1.music.126.net/Kox5oyoKrOm77_Rx4TW2yg==/109951170989107954.jpg",
+      "trackId": 2706222841,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "印记",
+      "artist": "鹭卓",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2712619942",
+      "cover": "http://p1.music.126.net/5qnsyvL_FEkrLKiQfejdIQ==/109951171268799007.jpg",
+      "trackId": 2712619942,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "忘了 (Live版)",
+      "artist": "黄子弘凡/黄丽玲",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2711879261",
+      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
+      "trackId": 2711879261,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "月亮翻过小山坡 (Live版)",
@@ -271,7 +271,7 @@
       "cover": "http://p1.music.126.net/M7qi_93U1IfQxyNT0JKphw==/109951171007412378.jpg",
       "trackId": 2706933038,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "拂晓 Proi Proi",
@@ -281,117 +281,57 @@
       "cover": "http://p1.music.126.net/2qGGwWFlMYF2o-GyNMhH5A==/109951171066942237.jpg",
       "trackId": 2709812973,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
-      "title": "同花顺 (Live版)",
-      "artist": "张碧晨/徐佳莹",
+      "title": "孤单心事 (Live版)",
+      "artist": "张碧晨/周兴哲",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704605112",
-      "cover": "http://p1.music.126.net/HZG_WgD1RtlhuS4vvQoDCg==/109951170980785449.jpg",
-      "trackId": 2704605112,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "临江仙",
-      "artist": "白鹿",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709712022",
-      "cover": "http://p2.music.126.net/_iWs6ADLX3dy7kRLjfAuiw==/109951171263827457.jpg",
-      "trackId": 2709712022,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "揣测",
-      "artist": "安扬August",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704260206",
-      "cover": "http://p2.music.126.net/-TRXj2wEGwXH0LjqA2SSmA==/109951170977618915.jpg",
-      "trackId": 2704260206,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "好好说再见",
-      "artist": "卓沅",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709447832",
-      "cover": "http://p1.music.126.net/JNIivxRRFPOY983UBOVCzA==/109951171079708705.jpg",
-      "trackId": 2709447832,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "Hate to Love",
-      "artist": "王嘉尔",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711475385",
-      "cover": "http://p2.music.126.net/d4sk8IqZJyRPwrgQybo-Tw==/109951171254730381.jpg",
-      "trackId": 2711475385,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "我很快乐 (Live版)",
-      "artist": "王源/王赫野",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711873788",
+      "src": "https://music.163.com/song/media/outer/url?id=2711879316",
       "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
-      "trackId": 2711873788,
+      "trackId": 2711879316,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
-      "title": "灰色头发",
-      "artist": "BOBBYNOPEACE/迪诺哥",
+      "title": "一些",
+      "artist": "石凯",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2713389706",
-      "cover": "http://p2.music.126.net/bWPm7fvLuwiNPSDqi-uxqQ==/109951171280488543.jpg",
-      "trackId": 2713389706,
+      "src": "https://music.163.com/song/media/outer/url?id=2688129675",
+      "cover": "http://p1.music.126.net/rNpni5EfwdsaDUMwgt-vtw==/109951171298148155.jpg",
+      "trackId": 2688129675,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
-      "title": "我会等 (Live版)",
-      "artist": "黄子弘凡/张远/路滨琪",
+      "title": "想自由 (Live版)",
+      "artist": "王源/陈粒",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711879181",
-      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
-      "trackId": 2711879181,
+      "src": "https://music.163.com/song/media/outer/url?id=2714743492",
+      "cover": "http://p1.music.126.net/MMRk2tqzEYA1Xr94SF4WfA==/109951171296285023.jpg",
+      "trackId": 2714743492,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
-      "title": "超经意",
-      "artist": "余佳运",
+      "title": "土象女孩",
+      "artist": "元/Rezey",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712596436",
-      "cover": "http://p1.music.126.net/IXcEHl-qUchNiheHL_hWiw==/109951171268463045.jpg",
-      "trackId": 2712596436,
+      "src": "https://music.163.com/song/media/outer/url?id=2708819042",
+      "cover": "http://p1.music.126.net/JXx64RTG2uc9XmPAN00Eog==/109951171029336194.jpg",
+      "trackId": 2708819042,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
-      "title": "我的爱没前奏 (Live)",
-      "artist": "欧阳娜娜",
+      "title": "爱，存在 (Live版)",
+      "artist": "姚晓棠/黄丽玲",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709044599",
-      "cover": "http://p2.music.126.net/miu5IsiANcdXMsIiYv-3Ew==/109951171032025711.jpg",
-      "trackId": 2709044599,
+      "src": "https://music.163.com/song/media/outer/url?id=2714743521",
+      "cover": "http://p1.music.126.net/MMRk2tqzEYA1Xr94SF4WfA==/109951171296285023.jpg",
+      "trackId": 2714743521,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "感谢你曾来过 (Live版)",
-      "artist": "陈冰/张远",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711879249",
-      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
-      "trackId": 2711879249,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "梦见你",
@@ -401,7 +341,97 @@
       "cover": "http://p1.music.126.net/WVAlb-OTKDZb-7ckMN6O4w==/109951171011329522.jpg",
       "trackId": 2707333836,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "我的爱没前奏 (Live)",
+      "artist": "欧阳娜娜",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709044599",
+      "cover": "http://p1.music.126.net/miu5IsiANcdXMsIiYv-3Ew==/109951171032025711.jpg",
+      "trackId": 2709044599,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "感谢你曾来过 (Live版)",
+      "artist": "陈冰/张远",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2711879249",
+      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
+      "trackId": 2711879249,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "灰色头发",
+      "artist": "BOBBYNOPEACE/迪诺哥",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2713389706",
+      "cover": "http://p1.music.126.net/bWPm7fvLuwiNPSDqi-uxqQ==/109951171280488543.jpg",
+      "trackId": 2713389706,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "Falling again",
+      "artist": "Lunak",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709432103",
+      "cover": "http://p1.music.126.net/IlGlIg9tYC9AeMwqI7siTw==/109951171078820686.jpg",
+      "trackId": 2709432103,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "我很快乐 (Live版)",
+      "artist": "王源/王赫野",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2711873788",
+      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
+      "trackId": 2711873788,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "I.K.U.W.T",
+      "artist": "马思唯/斑比Bambii",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2713075922",
+      "cover": "http://p1.music.126.net/sHDgwomGyI7Cw4lV01Vo9Q==/109951171301542585.jpg",
+      "trackId": 2713075922,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "在加纳共和国离婚",
+      "artist": "白鹿/曾舜晞",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709086537",
+      "cover": "http://p1.music.126.net/QrcwFypbcRA2SRESGvDJQQ==/109951171257861240.jpg",
+      "trackId": 2709086537,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "好好说再见",
+      "artist": "卓沅",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709447832",
+      "cover": "http://p1.music.126.net/JNIivxRRFPOY983UBOVCzA==/109951171079708705.jpg",
+      "trackId": 2709447832,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "追光者 (Live版)",
+      "artist": "张碧晨/黄子弘凡",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714740963",
+      "cover": "http://p1.music.126.net/MMRk2tqzEYA1Xr94SF4WfA==/109951171296285023.jpg",
+      "trackId": 2714740963,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "可我只是海 (Live版)",
@@ -411,47 +441,17 @@
       "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
       "trackId": 2709756644,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
-      "title": "舍得（可是爱已成两刃的利剑）",
-      "artist": "王唯旖",
+      "title": "我会等 (Live版)",
+      "artist": "黄子弘凡/张远/路滨琪",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705381154",
-      "cover": "http://p1.music.126.net/-2JfkzzVm_DbsFXo3wXP9A==/109951170988097987.jpg",
-      "trackId": 2705381154,
+      "src": "https://music.163.com/song/media/outer/url?id=2711879181",
+      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
+      "trackId": 2711879181,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "遥遥",
-      "artist": "杨昔默",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2702706626",
-      "cover": "http://p1.music.126.net/LNaexH9pRPzgg9fmbz7etQ==/109951170958976054.jpg",
-      "trackId": 2702706626,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "在加纳共和国离婚",
-      "artist": "白鹿/曾舜晞",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709086537",
-      "cover": "http://p2.music.126.net/QrcwFypbcRA2SRESGvDJQQ==/109951171257861240.jpg",
-      "trackId": 2709086537,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "翻身日记",
-      "artist": "海洋Bo/费米Frieme",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709087122",
-      "cover": "http://p1.music.126.net/6TMRYmBnThlxn80Ij2oYQg==/109951171034722557.jpg",
-      "trackId": 2709087122,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
     },
     {
       "title": "临江仙",
@@ -461,7 +461,67 @@
       "cover": "http://p1.music.126.net/_iWs6ADLX3dy7kRLjfAuiw==/109951171263827457.jpg",
       "trackId": 2711525867,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "疯子",
+      "artist": "SkiesNoLuv",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2705645673",
+      "cover": "http://p1.music.126.net/QfmmGpuqLevLeYgL60q5vw==/109951170991231945.jpg",
+      "trackId": 2705645673,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "超经意",
+      "artist": "余佳运",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2712596436",
+      "cover": "http://p1.music.126.net/IXcEHl-qUchNiheHL_hWiw==/109951171268463045.jpg",
+      "trackId": 2712596436,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "Hate to Love",
+      "artist": "王嘉尔",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2711475385",
+      "cover": "http://p1.music.126.net/d4sk8IqZJyRPwrgQybo-Tw==/109951171254730381.jpg",
+      "trackId": 2711475385,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "我用什么把你留住 (live)",
+      "artist": "陈楚生",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2707649869",
+      "cover": "http://p1.music.126.net/upQ080sTQCLy_-Ay7sfK_A==/109951171015406100.jpg",
+      "trackId": 2707649869,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.806Z"
+    },
+    {
+      "title": "杜鹃",
+      "artist": "Realzat/加木",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2712546506",
+      "cover": "http://p1.music.126.net/UhIg3NUPbEbtOug5ZLuv0Q==/109951171296109580.jpg",
+      "trackId": 2712546506,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "天空 (live)",
+      "artist": "单依纯",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2707649871",
+      "cover": "http://p1.music.126.net/upQ080sTQCLy_-Ay7sfK_A==/109951171015406100.jpg",
+      "trackId": 2707649871,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "TIAN TIAN",
@@ -471,37 +531,7 @@
       "cover": "http://p1.music.126.net/3SREPNrEu561h_K2jLB8ww==/109951171011324261.jpg",
       "trackId": 2707332868,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "凡人诀 (live)",
-      "artist": "陈楚生",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712612154",
-      "cover": "http://p1.music.126.net/MCrH67pCaBICesTDtQqLkQ==/109951171268640229.jpg",
-      "trackId": 2712612154,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "耙耳朵",
-      "artist": "邓超/陈赫/范志毅/王勉/李乃文/王俊凯",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712260379",
-      "cover": "http://p1.music.126.net/Dm2-Y-6Gzdy1DwhxI2Ulag==/109951171264088511.jpg",
-      "trackId": 2712260379,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "疯子",
-      "artist": "SkiesNoLuv",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705645673",
-      "cover": "http://p2.music.126.net/QfmmGpuqLevLeYgL60q5vw==/109951170991231945.jpg",
-      "trackId": 2705645673,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "Got It 4",
@@ -511,57 +541,17 @@
       "cover": "http://p1.music.126.net/hquzc-s_N5CM6Mb1lcWJ4w==/109951171026763141.jpg",
       "trackId": 2708537789,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "天空 (live)",
-      "artist": "单依纯",
+      "title": "我与世界的帧帧瞬间",
+      "artist": "崔十八/北夜/听潮阁",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2707649871",
-      "cover": "http://p2.music.126.net/upQ080sTQCLy_-Ay7sfK_A==/109951171015406100.jpg",
-      "trackId": 2707649871,
+      "src": "https://music.163.com/song/media/outer/url?id=2714055192",
+      "cover": "http://p1.music.126.net/YIbA3m1jHoixI00rw8fV0w==/109951171288427708.jpg",
+      "trackId": 2714055192,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "Want My Love",
-      "artist": "加木/Stephanie Poetri",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705073423",
-      "cover": "http://p2.music.126.net/sjjLats9YTtfjyu99qYFjQ==/109951170984816934.jpg",
-      "trackId": 2705073423,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "一天",
-      "artist": "鹿晗/队长",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705023842",
-      "cover": "http://p1.music.126.net/1MjNcZOjTkkMWgiErI9bDA==/109951170984267604.jpg",
-      "trackId": 2705023842,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "念蝶",
-      "artist": "野洵/刘兆宇",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2710141084",
-      "cover": "http://p2.music.126.net/4QXsm4fF0KoXshdhE0PKDg==/109951171173984823.jpg",
-      "trackId": 2710141084,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "我用什么把你留住 (live)",
-      "artist": "陈楚生",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2707649869",
-      "cover": "http://p2.music.126.net/upQ080sTQCLy_-Ay7sfK_A==/109951171015406100.jpg",
-      "trackId": 2707649869,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "梦的港湾",
@@ -571,27 +561,77 @@
       "cover": "http://p1.music.126.net/2AGOo-JBYpzvHi9lh9jwxw==/109951171287272793.jpg",
       "trackId": 2713933656,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "向日葵下",
-      "artist": "王一珩OneSD",
+      "title": "Want My Love",
+      "artist": "加木/Stephanie Poetri",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2710118167",
-      "cover": "http://p1.music.126.net/pYPBTfUNv_dauMlGgb7dsQ==/109951171171657700.jpg",
-      "trackId": 2710118167,
+      "src": "https://music.163.com/song/media/outer/url?id=2705073423",
+      "cover": "http://p1.music.126.net/sjjLats9YTtfjyu99qYFjQ==/109951170984816934.jpg",
+      "trackId": 2705073423,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "Situationship",
-      "artist": "AI MUSIC MATRIX",
+      "title": "翻身日记",
+      "artist": "海洋Bo/费米Frieme",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709941674",
-      "cover": "http://p2.music.126.net/Z03Rv4mXoFqcII5eewo4AQ==/109951171144252625.jpg",
-      "trackId": 2709941674,
+      "src": "https://music.163.com/song/media/outer/url?id=2709087122",
+      "cover": "http://p1.music.126.net/6TMRYmBnThlxn80Ij2oYQg==/109951171034722557.jpg",
+      "trackId": 2709087122,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "Lips Hips Kiss",
+      "artist": "KISS OF LIFE",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2707406681",
+      "cover": "http://p1.music.126.net/c0R-IFZ4tCd5oZ1SB5bKIg==/109951171027940643.jpg",
+      "trackId": 2707406681,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "荒岛站台 (live)",
+      "artist": "陈楚生",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2715047815",
+      "cover": "http://p1.music.126.net/zkfKGi2qr-75lPy48dlYLg==/109951171300378953.jpg",
+      "trackId": 2715047815,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "Got It 5",
+      "artist": "Lunak",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2713058485",
+      "cover": "http://p1.music.126.net/HxdG7EE_6Jl94AAR0SRr9Q==/109951171275199478.jpg",
+      "trackId": 2713058485,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "遥遥",
+      "artist": "杨昔默",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2702706626",
+      "cover": "http://p1.music.126.net/LNaexH9pRPzgg9fmbz7etQ==/109951170958976054.jpg",
+      "trackId": 2702706626,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "耙耳朵",
+      "artist": "邓超/陈赫/范志毅/王勉/李乃文/王俊凯",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2712260379",
+      "cover": "http://p1.music.126.net/Dm2-Y-6Gzdy1DwhxI2Ulag==/109951171264088511.jpg",
+      "trackId": 2712260379,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "爱在深夜里最难翻篇",
@@ -601,17 +641,7 @@
       "cover": "http://p1.music.126.net/0YXAyK1wrlHrHEmJlyW3uA==/109951171004515387.jpg",
       "trackId": 2706699417,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "玩转DNA",
-      "artist": "万妮达Vinida Weng/鱼莉莉",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711424941",
-      "cover": "http://p2.music.126.net/0_obWZNSzXPRdR3Wvvyg7w==/109951171252215702.jpg",
-      "trackId": 2711424941,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "平行线 (The Original Version.)",
@@ -621,17 +651,27 @@
       "cover": "http://p1.music.126.net/RI0qiKGYTxCMedOG3q0Aug==/109951171165771236.jpg",
       "trackId": 2709754460,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "独木",
-      "artist": "张云雷",
+      "title": "MAD",
+      "artist": "Martin Garrix/Lauv",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2707375581",
-      "cover": "http://p1.music.126.net/7rXNnff-d7fehyIACuo0JQ==/109951171031964811.jpg",
-      "trackId": 2707375581,
+      "src": "https://music.163.com/song/media/outer/url?id=2709207420",
+      "cover": "http://p1.music.126.net/y1ty7gbuGKhXDY1nE6CXFg==/109951171046595140.jpg",
+      "trackId": 2709207420,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "向日葵下",
+      "artist": "王一珩OneSD",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2710118167",
+      "cover": "http://p1.music.126.net/pYPBTfUNv_dauMlGgb7dsQ==/109951171171657700.jpg",
+      "trackId": 2710118167,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "伤心剖半 (Live版)",
@@ -641,37 +681,7 @@
       "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
       "trackId": 2709759307,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "我来自地狱",
-      "artist": "BOBBYNOPEACE/Saber",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2713395159",
-      "cover": "http://p1.music.126.net/bWPm7fvLuwiNPSDqi-uxqQ==/109951171280488543.jpg",
-      "trackId": 2713395159,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "珠玉 (live)",
-      "artist": "单依纯",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705257250",
-      "cover": "http://p2.music.126.net/ppZSbS5KjDb3ADkfvu8-Ig==/109951170987072577.jpg",
-      "trackId": 2705257250,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "夏天 (Live版)",
-      "artist": "李玖哲/米卡/姚晓棠",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711879293",
-      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
-      "trackId": 2711879293,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "爱像垃圾被你丢弃",
@@ -681,207 +691,57 @@
       "cover": "http://p1.music.126.net/F22zpQ38AzXrezsYozXkvg==/109951171283751657.jpg",
       "trackId": 2706384520,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "痛载入",
-      "artist": "猫头英",
+      "title": "凡人诀 (live)",
+      "artist": "陈楚生",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704319363",
-      "cover": "http://p1.music.126.net/jZq4TvQ2Fs835fTwjcrE1Q==/109951170978244061.jpg",
-      "trackId": 2704319363,
+      "src": "https://music.163.com/song/media/outer/url?id=2712612154",
+      "cover": "http://p1.music.126.net/MCrH67pCaBICesTDtQqLkQ==/109951171268640229.jpg",
+      "trackId": 2712612154,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "烽月",
-      "artist": "摩登兄弟刘宇宁",
+      "title": "Situationship",
+      "artist": "AI MUSIC MATRIX",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704347615",
-      "cover": "http://p1.music.126.net/2_7qZvT9Paz48fdOUYbeRg==/109951170987942299.jpg",
-      "trackId": 2704347615,
+      "src": "https://music.163.com/song/media/outer/url?id=2709941674",
+      "cover": "http://p1.music.126.net/Z03Rv4mXoFqcII5eewo4AQ==/109951171144252625.jpg",
+      "trackId": 2709941674,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "WE YOUNG",
-      "artist": "h3R3",
+      "title": "心动不是答案",
+      "artist": "徐梓淳",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712101157",
-      "cover": "http://p1.music.126.net/3XOHxvw5nKEoKUFnlbkrcA==/109951171262402051.jpg",
-      "trackId": 2712101157,
+      "src": "https://music.163.com/song/media/outer/url?id=2709799439",
+      "cover": "http://p1.music.126.net/QvQuokRODgREaijwMUF6ZQ==/109951171128555968.jpg",
+      "trackId": 2709799439,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "Save My Love",
-      "artist": "Marshmello/Ellie Goulding/AVAION",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712527010",
-      "cover": "http://p2.music.126.net/px1uvjGlXGdnTloZGu5YdQ==/109951171267798111.jpg",
-      "trackId": 2712527010,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "在你的身边 (Live版)",
-      "artist": "摩登兄弟刘宇宁/张含韵",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704605274",
-      "cover": "http://p1.music.126.net/HZG_WgD1RtlhuS4vvQoDCg==/109951170980785449.jpg",
-      "trackId": 2704605274,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "人生模拟器",
-      "artist": "姜云升",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2708737793",
-      "cover": "http://p1.music.126.net/MpgnIMwqDC3IWgGBfOnxIQ==/109951171077297566.jpg",
-      "trackId": 2708737793,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "Sapphire",
-      "artist": "Ed Sheeran",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711526740",
-      "cover": "http://p1.music.126.net/hqX7LDLVsU7OQxsmHSD3nA==/109951171255787065.jpg",
-      "trackId": 2711526740,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "玛丽莲",
-      "artist": "TQ/SHarK",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709842957",
-      "cover": "http://p1.music.126.net/zUf8xi7dUPicB6OyMHaJLQ==/109951171135992958.jpg",
-      "trackId": 2709842957,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "沦陷 (Live版)",
-      "artist": "喻言/辰乐",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709756704",
-      "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
-      "trackId": 2709756704,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "Lips Hips Kiss",
-      "artist": "KISS OF LIFE",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2707406681",
-      "cover": "http://p2.music.126.net/c0R-IFZ4tCd5oZ1SB5bKIg==/109951171027940643.jpg",
-      "trackId": 2707406681,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "枣庄一夜",
       "artist": "华云龙KLE",
       "duration": "--:--",
       "src": "https://music.163.com/song/media/outer/url?id=2706764151",
-      "cover": "http://p2.music.126.net/eSoVpvVnsS6TCvDUWZWptQ==/109951171005786628.jpg",
+      "cover": "http://p1.music.126.net/eSoVpvVnsS6TCvDUWZWptQ==/109951171005786628.jpg",
       "trackId": 2706764151,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "Manchild",
-      "artist": "Sabrina Carpenter",
+      "title": "爱情专属权",
+      "artist": "田如一",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712511468",
-      "cover": "http://p2.music.126.net/MgyiCj-ROHiJ2cw_f9tqWQ==/109951171267609507.jpg",
-      "trackId": 2712511468,
+      "src": "https://music.163.com/song/media/outer/url?id=2713710260",
+      "cover": "http://p1.music.126.net/n-RJOiQ6P5jwzGfAz9u_0w==/109951171284156517.jpg",
+      "trackId": 2713710260,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "空山灵雨 feat.旅行团",
-      "artist": "新裤子/旅行团乐队",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2712645752",
-      "cover": "http://p1.music.126.net/otgVAV_EvITDWKKBL5DGSQ==/109951171269012986.jpg",
-      "trackId": 2712645752,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "说",
-      "artist": "刘思鉴/孙盛希",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2708887678",
-      "cover": "http://p2.music.126.net/9IZ9_kabLPDngx8m3Y8k1w==/109951171124439504.jpg",
-      "trackId": 2708887678,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "プロポーズ",
-      "artist": "なとり",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2707202386",
-      "cover": "http://p2.music.126.net/IdIsdtELPKlPhD04UJtwFw==/109951171010336069.jpg",
-      "trackId": 2707202386,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "微光",
-      "artist": "李昊/队长",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709336025",
-      "cover": "http://p1.music.126.net/UQq9A4lDngLDnhQmqLW9KQ==/109951171065833642.jpg",
-      "trackId": 2709336025,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "飞鸟和蝉 (Live版)",
-      "artist": "王源/房东的猫",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2706932994",
-      "cover": "http://p1.music.126.net/M7qi_93U1IfQxyNT0JKphw==/109951171007412378.jpg",
-      "trackId": 2706932994,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "想自由",
-      "artist": "en（王翊恩）",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2713633715",
-      "cover": "http://p2.music.126.net/GnOsOTESSBbX3zO1nOVeJA==/109951171283267139.jpg",
-      "trackId": 2713633715,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "Elevator",
-      "artist": "BAEKHYUN",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705368327",
-      "cover": "http://p2.music.126.net/U90NX0KBDsCQAGBdl7bNkA==/109951170987987873.jpg",
-      "trackId": 2705368327,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "借给我一盒火柴",
-      "artist": "周深",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711662982",
-      "cover": "http://p2.music.126.net/TZVyMBq5MAf_NTcviYiIkw==/109951171257457722.jpg",
-      "trackId": 2711662982,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "风月绵绵",
@@ -891,37 +751,207 @@
       "cover": "http://p1.music.126.net/b2xl7wLYJ4cp8ZJXYqtlTA==/109951171028991871.jpg",
       "trackId": 2708793266,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "天下谁人不识君",
-      "artist": "华云龙KLE/mok",
+      "title": "说",
+      "artist": "刘思鉴/孙盛希",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2706786639",
-      "cover": "http://p2.music.126.net/eSoVpvVnsS6TCvDUWZWptQ==/109951171005786628.jpg",
-      "trackId": 2706786639,
+      "src": "https://music.163.com/song/media/outer/url?id=2708887678",
+      "cover": "http://p1.music.126.net/9IZ9_kabLPDngx8m3Y8k1w==/109951171124439504.jpg",
+      "trackId": 2708887678,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "MAD",
-      "artist": "Martin Garrix/Lauv",
+      "title": "淋雨",
+      "artist": "杜宣达",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2709207420",
-      "cover": "http://p2.music.126.net/y1ty7gbuGKhXDY1nE6CXFg==/109951171046595140.jpg",
-      "trackId": 2709207420,
+      "src": "https://music.163.com/song/media/outer/url?id=2709036201",
+      "cover": "http://p1.music.126.net/XPdrls50DjzsCJRQScRZZA==/109951171031362829.jpg",
+      "trackId": 2709036201,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "独木",
+      "artist": "张云雷",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2707375581",
+      "cover": "http://p1.music.126.net/7rXNnff-d7fehyIACuo0JQ==/109951171031964811.jpg",
+      "trackId": 2707375581,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "Elevator",
+      "artist": "BAEKHYUN",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2705368327",
+      "cover": "http://p1.music.126.net/U90NX0KBDsCQAGBdl7bNkA==/109951170987987873.jpg",
+      "trackId": 2705368327,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "你在睡梦中",
+      "artist": "房东的猫",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714302118",
+      "cover": "http://p1.music.126.net/gjc6NWP8XT9_Q6t-vOF5qA==/109951171291625102.jpg",
+      "trackId": 2714302118,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "两端",
+      "artist": "承麟/Katastic卡老师",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2704645895",
+      "cover": "http://p1.music.126.net/a0nv0SeN6HhTBMVsj-KuVw==/109951171004999220.jpg",
+      "trackId": 2704645895,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "无情画 (Live版)",
+      "artist": "弦子/王唯旖",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714743533",
+      "cover": "http://p1.music.126.net/MMRk2tqzEYA1Xr94SF4WfA==/109951171296285023.jpg",
+      "trackId": 2714743533,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "并不在乎我",
+      "artist": "高旭",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2714755017",
+      "cover": "http://p1.music.126.net/VyUMkccSfqxc84Ow1dvlPw==/109951171296340406.jpg",
+      "trackId": 2714755017,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "不停的",
       "artist": "Top Barry",
       "duration": "--:--",
       "src": "https://music.163.com/song/media/outer/url?id=2706324316",
-      "cover": "http://p2.music.126.net/cgXXV8PHNJKEWPUvwcs7Pg==/109951170999966930.jpg",
+      "cover": "http://p1.music.126.net/cgXXV8PHNJKEWPUvwcs7Pg==/109951170999966930.jpg",
       "trackId": 2706324316,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "飞鸟和蝉 (Live版)",
+      "artist": "王源/房东的猫",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2706932994",
+      "cover": "http://p1.music.126.net/M7qi_93U1IfQxyNT0JKphw==/109951171007412378.jpg",
+      "trackId": 2706932994,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "DROP TOP",
+      "artist": "MEOVV",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2703944649",
+      "cover": "http://p1.music.126.net/eOnNsivXcB-z-lRp-IoCyw==/109951171292006002.jpg",
+      "trackId": 2703944649,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "人生模拟器",
+      "artist": "姜云升",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2708737793",
+      "cover": "http://p1.music.126.net/MpgnIMwqDC3IWgGBfOnxIQ==/109951171077297566.jpg",
+      "trackId": 2708737793,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "想自由",
+      "artist": "en（王翊恩）",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2713633715",
+      "cover": "http://p1.music.126.net/GnOsOTESSBbX3zO1nOVeJA==/109951171283267139.jpg",
+      "trackId": 2713633715,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "天下谁人不识君",
+      "artist": "华云龙KLE/mok",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2706786639",
+      "cover": "http://p1.music.126.net/eSoVpvVnsS6TCvDUWZWptQ==/109951171005786628.jpg",
+      "trackId": 2706786639,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "沦陷 (Live版)",
+      "artist": "喻言/辰乐",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2709756704",
+      "cover": "http://p1.music.126.net/01UCVA1Kj8_lldtbpNOKrQ==/109951171123146945.jpg",
+      "trackId": 2709756704,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "Hachikō",
+      "artist": "藤井風",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2715083626",
+      "cover": "http://p1.music.126.net/XUo2V4MPlxE79XUb1bw0Hg==/109951171300720661.jpg",
+      "trackId": 2715083626,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "借给我一盒火柴",
+      "artist": "周深",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2711662982",
+      "cover": "http://p1.music.126.net/TZVyMBq5MAf_NTcviYiIkw==/109951171257457722.jpg",
+      "trackId": 2711662982,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "我来自地狱",
+      "artist": "BOBBYNOPEACE/Saber",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2713395159",
+      "cover": "http://p1.music.126.net/bWPm7fvLuwiNPSDqi-uxqQ==/109951171280488543.jpg",
+      "trackId": 2713395159,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "鸿古尔",
+      "artist": "Emma艾玛",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2706345794",
+      "cover": "http://p1.music.126.net/gkFcYzd0W5E3ZcjurQG8Lw==/109951171000277924.jpg",
+      "trackId": 2706345794,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
+    },
+    {
+      "title": "跟着感觉走",
+      "artist": "张震岳",
+      "duration": "--:--",
+      "src": "https://music.163.com/song/media/outer/url?id=2711496133",
+      "cover": "http://p1.music.126.net/Liw7hWAvnMNcF3KDJeNIfQ==/109951171255525859.jpg",
+      "trackId": 2711496133,
+      "source": "netease",
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
       "title": "盛夏的告别 (Live)",
@@ -931,77 +961,47 @@
       "cover": "http://p1.music.126.net/miu5IsiANcdXMsIiYv-3Ew==/109951171032025711.jpg",
       "trackId": 2709045446,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "将进酒 (live)",
-      "artist": "陈楚生",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705253915",
-      "cover": "http://p2.music.126.net/ppZSbS5KjDb3ADkfvu8-Ig==/109951170987072577.jpg",
-      "trackId": 2705253915,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "空山灵雨feat.新裤子",
-      "artist": "旅行团乐队/新裤子",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2706672177",
-      "cover": "http://p1.music.126.net/u3BAWUI9Fy4j4BUygf3pdA==/109951171004243208.jpg",
-      "trackId": 2706672177,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "梦",
+      "title": "四季",
       "artist": "鹿晗",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2704535805",
-      "cover": "http://p1.music.126.net/mybiet99XuXN7Cfqm8Xkog==/109951170980350513.jpg",
-      "trackId": 2704535805,
+      "src": "https://music.163.com/song/media/outer/url?id=2714420221",
+      "cover": "http://p1.music.126.net/Gy4n5iyxV33oOz5DGy3b_g==/109951171292659568.jpg",
+      "trackId": 2714420221,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "我不是那个成熟的大人",
-      "artist": "李昊/李宸旭Ansel/许钊豪/郑人予",
+      "title": "玛丽莲",
+      "artist": "TQ/SHarK",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2713014491",
-      "cover": "http://p1.music.126.net/kacQG7dDOB8KbGuD2_O9Dg==/109951171274334073.jpg",
-      "trackId": 2713014491,
+      "src": "https://music.163.com/song/media/outer/url?id=2709842957",
+      "cover": "http://p1.music.126.net/zUf8xi7dUPicB6OyMHaJLQ==/109951171135992958.jpg",
+      "trackId": 2709842957,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "炁 (live)",
-      "artist": "GAI周延",
+      "title": "WE YOUNG",
+      "artist": "h3R3",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2705254006",
-      "cover": "http://p2.music.126.net/ppZSbS5KjDb3ADkfvu8-Ig==/109951170987072577.jpg",
-      "trackId": 2705254006,
+      "src": "https://music.163.com/song/media/outer/url?id=2712101157",
+      "cover": "http://p1.music.126.net/3XOHxvw5nKEoKUFnlbkrcA==/109951171262402051.jpg",
+      "trackId": 2712101157,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     },
     {
-      "title": "爱情沙拉拉拉 (live)",
-      "artist": "单依纯",
+      "title": "夏天 (Live版)",
+      "artist": "李玖哲/米卡/姚晓棠",
       "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2710057439",
-      "cover": "http://p2.music.126.net/4WfcHwXCG9fFzmtBNYlOaQ==/109951171164305385.jpg",
-      "trackId": 2710057439,
+      "src": "https://music.163.com/song/media/outer/url?id=2711879293",
+      "cover": "http://p1.music.126.net/LHhB_nK6j1WG9dSQ51uK0w==/109951171259680660.jpg",
+      "trackId": 2711879293,
       "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
-    },
-    {
-      "title": "浪漫信号",
-      "artist": "吴以恒",
-      "duration": "--:--",
-      "src": "https://music.163.com/song/media/outer/url?id=2711959805",
-      "cover": "http://p2.music.126.net/KCM2pO0VdmBXcS4v7sf04g==/109951171260444262.jpg",
-      "trackId": 2711959805,
-      "source": "netease",
-      "processedAt": "2025-06-13T02:52:05.387Z"
+      "processedAt": "2025-06-17T03:30:15.807Z"
     }
   ]
 }

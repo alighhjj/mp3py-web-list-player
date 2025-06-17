@@ -136,22 +136,34 @@ class IOSMediaSessionFix {
             }
         });
         
-        // 尝试注册快进快退（可选）
+        // iOS特殊处理：强制清除快进快退，确保显示上一曲下一曲
         try {
-            navigator.mediaSession.setActionHandler('seekforward', (details) => {
-                console.log('iOS Media Session: 快进');
-                const skipTime = details.seekOffset || 10;
-                this.audio.currentTime = Math.min(this.audio.currentTime + skipTime, this.audio.duration);
-            });
-            
-            navigator.mediaSession.setActionHandler('seekbackward', (details) => {
-                console.log('iOS Media Session: 快退');
-                const skipTime = details.seekOffset || 10;
-                this.audio.currentTime = Math.max(this.audio.currentTime - skipTime, 0);
-            });
+            // 先清除可能存在的快进快退处理器
+            navigator.mediaSession.setActionHandler('seekforward', null);
+            navigator.mediaSession.setActionHandler('seekbackward', null);
+            console.log('已清除快进快退处理器，优先显示上一曲下一曲');
         } catch (error) {
-            console.log('快进快退功能不支持:', error);
+            console.log('清除快进快退处理器失败:', error);
         }
+        
+        // 延迟重新确认上一曲下一曲处理器
+        setTimeout(() => {
+            try {
+                navigator.mediaSession.setActionHandler('previoustrack', () => {
+                    console.log('iOS Media Session: 上一曲 (重新注册)');
+                    window.dispatchEvent(new CustomEvent('mediasession-previoustrack'));
+                });
+                
+                navigator.mediaSession.setActionHandler('nexttrack', () => {
+                    console.log('iOS Media Session: 下一曲 (重新注册)');
+                    window.dispatchEvent(new CustomEvent('mediasession-nexttrack'));
+                });
+                
+                console.log('已重新注册上一曲下一曲处理器');
+            } catch (error) {
+                console.warn('重新注册上一曲下一曲失败:', error);
+            }
+        }, 500);
     }
     
     /**
@@ -168,7 +180,11 @@ class IOSMediaSessionFix {
         });
         
         this.audio.addEventListener('ended', () => {
+            console.log('iOS Media Session: 歌曲播放结束');
             this.updatePlaybackState('none');
+            
+            // iOS锁屏环境下确保自动播放下一首
+            this.triggerAutoPlayNext();
         });
         
         // 音频加载时重新设置媒体会话
@@ -277,25 +293,86 @@ class IOSMediaSessionFix {
                     title: metadata.title || '未知标题',
                     artist: metadata.artist || '未知艺术家',
                     album: metadata.album || '未知专辑',
-                    artwork: metadata.artwork || [
-                        {
-                            src: '/icons/icon-192x192.png',
-                            sizes: '192x192',
-                            type: 'image/png'
-                        }
-                    ]
+                    artwork: metadata.artwork || []
                 });
                 
-                // iOS 特殊处理：延迟更新状态
-                setTimeout(() => {
-                    this.updatePositionState();
-                }, 100);
+                console.log('iOS Media Session 元数据已更新:', metadata);
+                
+                // 强制重新注册上一曲下一曲处理器
+                this.forceRegisterTrackHandlers();
+                
+                // 强制刷新媒体会话状态
+                this.forceRefreshMediaSession();
                 
                 console.log('iOS 媒体元数据已更新:', metadata.title);
             } catch (error) {
                 console.error('更新媒体元数据失败:', error);
             }
         }
+    }
+    
+    /**
+     * 强制重新注册上一曲下一曲处理器
+     */
+    forceRegisterTrackHandlers() {
+        try {
+            // 清除快进快退
+            navigator.mediaSession.setActionHandler('seekforward', null);
+            navigator.mediaSession.setActionHandler('seekbackward', null);
+            
+            // 重新注册上一曲下一曲
+            navigator.mediaSession.setActionHandler('previoustrack', () => {
+                console.log('iOS Media Session: 上一曲 (强制重注册)');
+                window.dispatchEvent(new CustomEvent('mediasession-previoustrack'));
+            });
+            
+            navigator.mediaSession.setActionHandler('nexttrack', () => {
+                console.log('iOS Media Session: 下一曲 (强制重注册)');
+                window.dispatchEvent(new CustomEvent('mediasession-nexttrack'));
+            });
+            
+            console.log('已强制重新注册上一曲下一曲处理器');
+        } catch (error) {
+            console.warn('强制重新注册处理器失败:', error);
+        }
+    }
+    
+    /**
+     * 触发自动播放下一首（带重试机制）
+     */
+    triggerAutoPlayNext() {
+        console.log('iOS Media Session: 开始触发自动播放下一首');
+        
+        let retryCount = 0;
+        const maxRetries = 3;
+        
+        const attemptAutoPlay = () => {
+            retryCount++;
+            console.log(`iOS Media Session: 尝试自动播放下一首 (第${retryCount}次)`);
+            
+            // 方法1：触发自定义事件
+            window.dispatchEvent(new CustomEvent('mediasession-nexttrack'));
+            
+            // 方法2：直接调用全局函数
+            if (typeof window.playNextSong === 'function') {
+                console.log('iOS Media Session: 直接调用playNextSong函数');
+                try {
+                    window.playNextSong();
+                } catch (error) {
+                    console.warn('直接调用playNextSong失败:', error);
+                }
+            }
+            
+            // 如果还有重试次数，延迟重试
+            if (retryCount < maxRetries) {
+                setTimeout(attemptAutoPlay, 300 * retryCount);
+            } else {
+                console.log('iOS Media Session: 自动播放下一首重试次数已用完');
+            }
+        };
+        
+        // 延迟执行第一次尝试
+        setTimeout(attemptAutoPlay, 150);
     }
 }
 

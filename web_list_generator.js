@@ -93,12 +93,22 @@ function transformToStandardFormat(songsData, chartName) {
   
   // 转换数据格式
   const songs = songsData.map(item => {
+    // 处理封面链接，确保使用 HTTPS 协议
+    let coverUrl = null;
+    if (item.pic) {
+      coverUrl = item.pic.trim();
+      // 将 HTTP 协议的网易云音乐图片链接转换为 HTTPS
+      if (coverUrl.startsWith('http://p1.music.126.net/') || coverUrl.startsWith('http://p2.music.126.net/')) {
+        coverUrl = coverUrl.replace('http://', 'https://');
+      }
+    }
+    
     return {
       title: item.song || '',
       artist: item.sing || '',
       duration: "--:--",
       src: item.url || null,
-      cover: item.pic ? item.pic.trim() : null,
+      cover: coverUrl,
       trackId: item.id || 0,
       source: "netease",
       processedAt: new Date().toISOString()
