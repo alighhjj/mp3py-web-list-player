@@ -226,7 +226,7 @@ function Invoke-GitCommitAndPush {
                     Write-Host "拉取失败，是否尝试手动重复提交？" -ForegroundColor Yellow
                     $manualRetry = Read-Host "输入 y 进行手动重复提交，其他键跳过 (y/n)"
                     if ($manualRetry -eq 'y' -or $manualRetry -eq 'Y') {
-                        Write-Host "执行手动重复提交: git push origin $currentBranch" -ForegroundColor Cyan
+                        Write-Host "执行手动重复提交: git push --force origin $currentBranch" -ForegroundColor Cyan
                         git push origin $currentBranch
                         if ($LASTEXITCODE -eq 0) {
                             Write-Host "手动重复提交成功！" -ForegroundColor Green
